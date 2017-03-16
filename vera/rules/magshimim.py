@@ -1,5 +1,5 @@
-import codeanalyzer
+import codelyzer
 
-codeanalyzer.veraAnalysis()
-codeanalyzer.sanitizerAnalysis()
-codeanalyzer.indentationAnalysis()
+codelyzer.veraAnalysis()
+codelyzer.sanitizerAnalysis()
+codelyzer.indentationAnalysis()
