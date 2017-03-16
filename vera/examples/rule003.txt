@@ -1,0 +1,5 @@
+rule003.cpp:4: Curly bracket tab indentation incorrect, found 11 but expected 0
+rule003.cpp:6: Closing curly bracket not in the same line or column.
+rule003.cpp:26: Bad line indentation, exptected to start with 2 tab(s).
+rule003.cpp:27: Bad line indentation, exptected to start with 3 tab(s).
+rule003.cpp:28: Bad line indentation, exptected to start with 3 tab(s).

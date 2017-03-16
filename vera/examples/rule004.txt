@@ -1,0 +1,4 @@
+rule004.cpp:13: More than one semicolon cannot appear in the same line unless in an if statement.
+rule004.cpp:19: For loops must have all three loop arguments present.
+rule004.cpp:23: For loops must have all three loop arguments present.
+rule004.cpp:27: For loops must have all three loop arguments present.

@@ -1,0 +1,1 @@
+rule005.cpp:35: Only one 'return' token should be used in a function. Found another in line:31

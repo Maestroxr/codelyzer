@@ -1,0 +1,12 @@
+rule007.cpp:12: Const or #define '(constInt' : constInt)' name isn't UPPERCASE_WITH_UNDERSCORE.
+rule007.cpp:13: Uninitialized identifier 'i' of type int.
+rule007.cpp:14: Spacing for identifier/literal in  operator[] (supposed to be 'Arr[ constInt ]').
+rule007.cpp:14: Non #define identifier 'constInt' used to initialize array.
+rule007.cpp:14: Identifier name does not conform to camelCase , can't start with digit or one capital letter in identifier Arr.
+rule007.cpp:15: Spacing for identifier/literal in  operator{} (supposed to be '{ 1 }').
+rule007.cpp:15: Spacing for identifier/literal in  operator[] (supposed to be 'name[ CONST_INT ]').
+rule007.cpp:15: Char array needs to be initialized with '{ 0 }'
+rule007.cpp:16: Uninitialized identifier 'p' of type int.
+rule007.cpp:16: Pointer's '*' not next to the pointer's type ("void* p" rather than "void *p").
+rule007.cpp:17: Malloc's cast is to incorrect type, pointer initialized as 'int' but cast was to 'char'.
+rule007.cpp:18: Malloc lacks a pointer cast.
