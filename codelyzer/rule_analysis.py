@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # variable, define, function naming
 import re
-from codeanalyzer.sanitizer import sanitize
+from codelyzer.sanitizer import sanitize
 import operator
 import vera
 
