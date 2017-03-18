@@ -3,11 +3,9 @@
 struct first{
 	int something;
 }
-
-struct second{
-	int somethingElse = 2;
-}
 /*********/
+
+
 
 int main() 
 {
@@ -16,3 +14,8 @@ int main()
 }
 
 
+/*PROBLEM*/
+struct second{
+	int somethingElse = 2;
+}
+/*********/

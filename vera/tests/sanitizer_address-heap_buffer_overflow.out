@@ -1,0 +1,5 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow.c:12: Spacing for identifier/literal in  operator [] ,supposed to be '[ 0 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow.c:13: Spacing for identifier/literal in  operator [] ,supposed to be '[ argc+100 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow.c:16: Spacing for identifier/literal in  operator [] ,supposed to be '[ argc+100 ]'.
+sanitizer_address-heap_buffer_overflow.cpp:10: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow]: heap-buffer-overflow, allocated by thread.
+sanitizer_address-heap_buffer_overflow.cpp:12: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow]: heap-buffer-overflow, READ.

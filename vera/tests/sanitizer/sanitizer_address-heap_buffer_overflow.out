@@ -1,0 +1,2 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow.c:11: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow]: heap-buffer-overflow, allocated by thread, suspect variable identifiers: array.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow.c:13: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow]: heap-buffer-overflow, READ, suspect variable identifiers: array.

@@ -1,0 +1,1 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_buffer_overflow.c:12: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_buffer_overflow]: stack-buffer-overflow, READ, variable identifier: stackArray.

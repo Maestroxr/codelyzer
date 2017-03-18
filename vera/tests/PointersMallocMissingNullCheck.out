@@ -1,0 +1,2 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:43: Pointer's 'p2' Malloc(s) missing '1' null pointer check(s).
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:56: Pointer's 'p4' Malloc(s) missing '1' null pointer check(s).

@@ -10,8 +10,10 @@
 
 int main(int argc, char **argv)
 {
-    void* *  p = (void**)malloc(7);
-      
+	char               **names, **order;
+	void  *handle = data;
+    const void* * p = (void*)malloc(7);
+    const void* **   *  **  ppppp = (void*)malloc(7);  
 	if (!p)
 	{
 		//do something one

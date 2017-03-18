@@ -1,0 +1,10 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:9: Malloc lacks a pointer cast.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:9: Pointer's 'p2' Malloc(s) missing '1' null pointer check(s).
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:10: Malloc's cast is to incorrect type, pointer initialized as 'int**********' but cast was to 'int*****'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:15: Pointer's '*' not next to the pointer's type 'int* problem1' instead of 'int * problem1'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:16: Pointer's '*' not next to the pointer's type 'int ,* problem2' instead of 'int , * problem2'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:16: Malloc lacks a pointer cast.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:16: Pointer's 'pp2' Malloc(s) missing '1' null pointer check(s).
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:17: Malloc's cast is to incorrect type, pointer initialized as 'int************' but cast was to 'int******'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:17: Pointer's '*' not next to the pointer's type 'int****** p4' instead of 'int*  ***** p4'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:17: Pointer's 'p4' Malloc(s) missing '4' null pointer check(s).

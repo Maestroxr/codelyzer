@@ -1,0 +1,1 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\GlobalVariableAfterFirstFunction.c:11: 'Global variable 'x' appears after the first function main.

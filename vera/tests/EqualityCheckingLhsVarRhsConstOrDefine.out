@@ -1,0 +1,2 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\EqualityCheckingLhsVarRhsConstOrDefine.c:24: Equality checking 'x == CONSTANT_INT' with left-hand side argument as variable and right-hand side as const or #define.
+C:\Work\AutoAssessment\codelyzer\vera\tests\EqualityCheckingLhsVarRhsConstOrDefine.c:29: Equality checking 'x == CONSTANT_DEFINE' with left-hand side argument as variable and right-hand side as const or #define.

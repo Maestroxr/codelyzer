@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # variable, define, function naming
+import os
 import re
 from codelyzer.sanitizer import sanitize
 import operator
@@ -8,7 +9,7 @@ import vera
 
 START, CONTROL, EXPECTED_BLOCK, BLOCK, EXPECTED_IDENTIFIER, EXPECTED_SEMICOLON = range(6)
 ANY, ONE, TWO = range(4, 7)
-
+whitespace = " "
 literals = {"intlit", "stringlit", "charlit"}
 types = {"int", "char", "void", "float", "double"}
 functionalyzeTokenTypes = {"for", "while", "do", "else", "if", "equal", "notequal", "not", "leftparen", "rightparen",
@@ -151,6 +152,9 @@ def pushControlToken(stack, stackList, state, t):
 
     return stack, state
 
+def printTokens(list, prefix = ""):
+    print(prefix + str([(token.type, token.value, token.line, token.column) for token in list]))
+
 
 def pushInitializationStack(fileName):
     """
@@ -196,6 +200,8 @@ def pushInitializationStack(fileName):
                 state.setdefault("commaVars", [])
                 state["commaVars"].append(t)
                 stack.append(t)
+                state.setdefault("commas",[])
+                state["commas"].append(prev)
 
             elif t.type == "assign" and "commaVars" in state:
                 state.setdefault("commaAssigns", [])
@@ -287,8 +293,11 @@ def popRecursive(token, fileName, stack, state, flags, defineDict, typeDict):
 
     elif token.type == "rightparen" and "malloc" in flags and "assign" not in flags:
         if "type" in state:
-            type = state["type"]
-
+            type = state["type"][:]
+            if "commaStars" in state and state["commaStars"]:
+                type += state["commaStars"][-1]
+            elif "typeStars" in state and state["typeStars"]:
+                type+= state["typeStars"][-1]
         elif state["identifier"].value in typeDict:
             type = typeDict[state["identifier"].value]
         identifierType = ''.join([t.value for t in type])
@@ -310,9 +319,7 @@ def popIdentifier(identifier, fileName, stack, flags, state, constDict, varDict,
             (state["assign"].line < state["comma"].line or \
              (state["assign"].line == state["comma"].line and state["assign"].column < state["comma"].column)))
     if "commaVars" in state and state["commaVars"][-1].value == identifier.value:
-        del state["commaVars"][-1]
-        if not state["commaVars"]:
-            del state["commaVars"]
+
         assigned = False
         if "commaAssigns" in state:
             assign = state["commaAssigns"][-1]
@@ -331,9 +338,10 @@ def popIdentifier(identifier, fileName, stack, flags, state, constDict, varDict,
         constDict[identifier.value] = identifier
     if "commaStars" in state and state["commaStars"]:
         type += state["commaStars"][-1]
-
+        flags["stars"] = state["commaStars"][-1][:]
     elif "typeStars" in state and state["typeStars"]:
         type +=   state["typeStars"][-1]
+        flags["stars"] = state["typeStars"][-1][:]
     typeDict[identifier.value] = type
     if state["type"][0].type == "struct":
         identifierType = state["type"][0].value+" "+''.join([t.value for t in type])
@@ -369,34 +377,46 @@ def popStar(token, fileName, stack, flags, state): #Justin Bieber
     # with a space from the variable
     if "type" not in state or "identifier" not in state:
         return
-    dictKey = "commaStars" if "comma" in state and "commaStars" else "typeStars"
+    dictKey = "commaStars" if "commas" in state and state["commaStars"]  else "typeStars"
     if dictKey not in state or not state[dictKey]: return
-    flags.setdefault(dictKey,state[dictKey])
-    pointerType, pointerList = state[dictKey][len(state[dictKey])-1], state[dictKey][-1]
-    type, star = state["type"] + pointerType, pointerList[-1]
-
-    if token.column != star.column or token.line != star.line: return
-    index = len(state["type"]) + len(pointerList) - 1
-    identifier = state["identifier"]
-    differenceToVar, differenceToNextInType = identifier.column - star.column, 1
-    starCloseToIdentifier = index == len(type) - 1 and differenceToVar != 2
-    state[dictKey][-1].pop()
+    type, star = state["type"] + flags["stars"], state[dictKey][-1].pop()
+    starList = state[dictKey][-1]
     if not state[dictKey][-1]: state[dictKey].pop()
+    if token.column != star.column or token.line != star.line: return
+    index, typeLength = len(starList), len(state["type"]) -1
+    identifier = state["identifier"]
 
-    startType, endType = ''.join([tt.value for tt in type[:index]]), ''.join([tt.value for tt in type[index:]])
-    nextColumn = star.column + len(star.value) - 1
-    differenceToNextInType = star.column - nextColumn
+    startTypeList = type[:typeLength + index+1]
+    endTypeList = type[typeLength + index+1:]
 
-    if starCloseToIdentifier:
-         vera.report(fileName, star.line, "Pointer's '*' does not have a single whitespace before identifier, '"
+    nextToken = state[dictKey][-1][-1] if starList else state["type"][-1]
+    if "commas" in state:
+        comma = state["commas"][-1]
+        identifier = state["commaVars"][-1]
+        if not starList:
+            nextToken = comma
+        startTypeList = state["type"] + [whitespace,comma] + starList
+        endTypeList = flags["stars"][index:]
+
+    startType = ''.join([tt.value for tt in startTypeList])
+    endType = ''.join([tt.value for tt in endTypeList])
+    differenceToNextInType = star.column - nextToken.column - len(nextToken.value)
+    differenceToVar = identifier.column - star.column - 1
+    starCloseToIdentifier = index != len(flags["stars"]) - 1 or differenceToVar == 1
+    starCloseToNextInType = differenceToNextInType == 0
+
+
+    if not starCloseToIdentifier:
+        vera.report(fileName, star.line, "Pointer's '*' does not have a single whitespace before identifier, '"
                      + startType + endType + " " + identifier.value + "' instead of '"
-                     + startType + " " * (differenceToNextInType - 1) + endType + " " * (
-                    differenceToVar - 1) + identifier.value + "'.")
+                     + startType +" "*differenceToNextInType+ endType + " " * (differenceToVar) + identifier.value + "'.")
 
-    elif differenceToNextInType != 1:
+    if not starCloseToNextInType:
+        betweenTypeAndIdentifier = " " if starCloseToIdentifier else " " * differenceToVar
+
         vera.report(fileName, star.line, "Pointer's '*' not next to the pointer's type '"
                     + startType + endType + " " + identifier.value + "' instead of '"
-                    + startType + " " * (differenceToNextInType-1) + endType + " " * (differenceToVar-1) + identifier.value + "'.")
+                    + startType + " " * (differenceToNextInType) + endType + betweenTypeAndIdentifier + identifier.value + "'.")
 
 
 
@@ -454,6 +474,15 @@ def popInitializationStack(fileName, stackList):
 
             elif token.type == "star" and ("assign" in flags or "assign" not in state):
                 popStar(token, fileName, stack, flags, state)
+            elif token.type == "comma" and "commas" in state and state["commas"][-1].line == token.line  \
+                    and state["commas"][-1].column == token.column:
+                state["commas"].pop()
+                if not state["commas"]: del state["commas"]
+                if "commaVars" in state:
+                    del state["commaVars"][-1]
+                    if not state["commaVars"]:
+                        del state["commaVars"]
+
     return infoDict
 
 
@@ -547,7 +576,7 @@ def handleControl(t, fileName, constDict, mallocDict, defineDict, varDict):
                         if varDict.has_key(controlIdentifier.value) and rhs != None:
                             vera.report(fileName, t.line,
                                         "Equality checking '" + controlIdentifier.value + " == " + rhs.value + "' with "
-                                             "left-hand-side argument as variable and rhs as const or #define.")
+                                             "left-hand side argument as variable and right-hand side as const or #define.")
                         if t.value == "NULL" and controlIdentifier.value in mallocDict:
                             mallocDict[controlIdentifier.value] = mallocDict[controlIdentifier.value][0], mallocDict[controlIdentifier.value][1] - 1
 
@@ -691,7 +720,11 @@ def isVarBeforeFirstFunction(funcs, vars, types, fileName):
 
 
 def veraAnalysis():
-    for fileName in vera.getSourceFileNames():
+    sourceFiles = vera.getSourceFileNames()
+    global whitespace
+    whitespace = vera.getTokens(sourceFiles[0],1,0,-1,-1,["space"])[0]
+
+    for fileName in sourceFiles:
         stackStateList = pushInitializationStack(fileName)
         stackStateList = stackStateList[::-1]
         #printStack = [(stackState[1],[(t.type,t.value,t.line) for t in stackState[0]]) for stackState in stackStateList]
@@ -723,11 +756,9 @@ def addDictionaryIdentifiers(dict,file, pointerLineDict):
 
 
 def populateIdentifierLines(file, pointerLineDict):
-    if not pointerLineDict.has_key(file):
-        pointerLineDict[file] = {}
-
-    else:
+    if pointerLineDict.has_key(file) or file not in fileInfoDict:
         return
+    pointerLineDict[file] = {}
     infoDict = fileInfoDict[file]
     constDict, varDict, mallocDict = infoDict["constDict"], infoDict["varDict"], infoDict["mallocDict"]
     mallocDict = {k:v[0] for k,v in mallocDict.iteritems()}
@@ -737,6 +768,7 @@ def populateIdentifierLines(file, pointerLineDict):
 
 
 def lookupRecurrentIdentifiers(file, pointerLineDict):
+    if file not in fileInfoDict: return
     infoDict = fileInfoDict[file]
     constDict, varDict, mallocDict = infoDict["constDict"], infoDict["varDict"], infoDict["mallocDict"]
     identifierMap = dict(mallocDict)
@@ -749,11 +781,14 @@ def lookupRecurrentIdentifiers(file, pointerLineDict):
             pointerLineDict[file][t.line][t.value] = t
 
 
-def sanitizerAnalysis():
-    runtimeErrorList= sanitize()
+def sanitizerAnalysis(sanirizerDir,sanitizerFile):
+    runtimeErrorList= sanitize(sanirizerDir, sanitizerFile)
     pointerLineDict = {}
-
+    fileNameOnly = { os.path.basename(k):k for k,v in fileInfoDict.items()}
     for (file, line), (warning, identifier,appearsInFiles) in runtimeErrorList.iteritems():
+        if file not in fileInfoDict:
+            if file not in fileNameOnly: return
+            file = fileNameOnly[file]
         line, identifiers = int(line), None
         if identifier is not None:
             identifiers = {identifier : None}
@@ -770,7 +805,7 @@ def sanitizerAnalysis():
 
             else:
                 error = warning + "."
-        scenariosString = "Memory:"+"["+",".join([scen[:-5] for scen in sorted(appearsInFiles)])+"]: "
+        scenariosString = "Memory:"+"["+",".join([os.path.splitext(scen)[0] for scen in sorted(appearsInFiles)])+"]: "
         error = scenariosString+error
         vera.report(file, line, error)
 

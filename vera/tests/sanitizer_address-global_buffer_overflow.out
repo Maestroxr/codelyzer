@@ -1,0 +1,3 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-global_buffer_overflow.c:12: Spacing for identifier/literal in  operator [] ,supposed to be '[ argc+100 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-global_buffer_overflow.c:15: Spacing for identifier/literal in  operator [] ,supposed to be '[ argc+100 ]'.
+sanitizer_address-global_buffer_overflow.cpp:11: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-global_buffer_overflow]: global-buffer-overflow, READ, variable identifier: global_array.

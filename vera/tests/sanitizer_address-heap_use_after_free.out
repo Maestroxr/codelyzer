@@ -1,0 +1,5 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free.c:14: Spacing for identifier/literal in  operator [] ,supposed to be '[ argc ]'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free.c:17: Spacing for identifier/literal in  operator [] ,supposed to be '[ argc ]'.
+sanitizer_address-heap_use_after_free.cpp:12: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free]: heap-use-after-free, previously allocated by thread.
+sanitizer_address-heap_use_after_free.cpp:13: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free]: heap-use-after-free, freed by thread.
+sanitizer_address-heap_use_after_free.cpp:14: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free]: heap-use-after-free, READ.

@@ -1,0 +1,2 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\OneReturnTokenInFuction.c:24: Only one 'return' token should be used in a function. Found another in line:22
+C:\Work\AutoAssessment\codelyzer\vera\tests\OneReturnTokenInFuction.c:34: Only one 'return' token should be used in a function. Found another in line:32

@@ -1,0 +1,8 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:11: Uninitialized identifier 'x' of type int.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:12: Uninitialized identifier 'z' of type int.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:12: Uninitialized identifier 'y' of type int.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:13: Uninitialized identifier 'a' of type int.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:14: Uninitialized identifier 'd' of type int.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:15: Uninitialized identifier 's3' of type char.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:15: Uninitialized identifier 's1' of type char.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:16: Uninitialized identifier 's5' of type char.

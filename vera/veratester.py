@@ -1,24 +1,48 @@
 import subprocess as sub
 import os
+import difflib
+import sys
+
+def testFiles(fileList, dir, cmdMaker):
+    diffList = []
+    for file in fileList:
+
+
+        splitFile = os.path.splitext(file)
+        nameOnly, extension = splitFile[0], splitFile[1]
+        cmd = cmdMaker(nameOnly,extension)
+        filePath = dir+"\\"+nameOnly
+        if not extension in [".c",".cpp"]:
+            continue
+
+        p = sub.Popen(cmd, stdout=sub.PIPE, stderr=sub.PIPE)
+        output, errors = p.communicate()
+        with open(filePath+".out",'w') as outputFile:
+            outputFile.write(output.decode('ascii'))
+
+        with open(filePath + ".out", 'r') as outputFile:
+            if os.path.isfile(filePath+".cmp"):
+                with open(filePath + ".cmp", 'r') as cmpFile:
+                    diff = difflib.unified_diff(
+                        cmpFile.readlines(),
+                        outputFile.readlines())
+
+                    for line in diff:
+                        diffList.append((file,line))
+    for file, differentLine in diffList:
+        #if differentLine[:3] in ["---", "+++"] or differentLine[0] in ["@","-"]: continue
+        print("In file:"+file+" non-matching line:<"+differentLine+">")
+
+os.chdir((".."))
 dir = os.path.dirname(os.path.realpath(__file__))
-testsDir = dir + "\\tests"
+testsDir = dir + "\\tests\\"
 filesIter = os.walk(testsDir)
 
 path, _, fileList = next(filesIter)
-relative = "C:\\Work\\AutoAssessment\\Analysis Tools\\lint"
-print(fileList)
-for file in fileList:
-    splitFile = file.split('.')[-1]
-    nameOnly, extension = ''.join(splitFile[:-1]), splitFile[-1]
-    filePath = testsDir+"\\"+nameOnly
-    if not extension in ["c","cpp"]:
-        continue
-    print(extension)
-    p = sub.Popen(['vera++', '-d', '-R', 'M007', '--root', dir, testsDir+"\\"+file], stdout=sub.PIPE, stderr=sub.PIPE)
-    output, errors = p.communicate()
-    print(output)
-    #print(errors)
-    with open(filePath+".out",'w') as f:
-        f.write(str(output))
-    if os.path.isfile(filePath+".cmp"):
 
+
+#testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ])
+sanitizerDir = testsDir+"sanitizer"
+filesIter = os.walk(sanitizerDir)
+path, _, fileList = next(filesIter)
+testFiles(fileList, sanitizerDir, lambda f,e: ['vera++', '-d', '--root', dir,'-P', 'sanitizer-dir='+sanitizerDir,'-P', 'sanitizer-file='+f+".log", sanitizerDir+"\\"+f+e ])

@@ -1,0 +1,6 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:9: Pointer's 'p2' Malloc(s) missing '1' null pointer check(s).
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:10: Malloc's cast is to incorrect type, pointer initialized as 'int**********' but cast was to 'int*****'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:14: Pointer's '*' does not have a single whitespace before identifier, 'int* problem1' instead of 'int*  problem1'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:15: Pointer's '*' does not have a single whitespace before identifier, 'int ,* problem2' instead of 'int ,*problem2'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:16: Malloc's cast is to incorrect type, pointer initialized as 'int**********' but cast was to 'int*****'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:16: Pointer's 'p3' Malloc(s) missing '4' null pointer check(s).

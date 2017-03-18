@@ -1,20 +1,26 @@
 import re
 import os
 import glob
-def sanitize():
-    onlyfiles, sanitizerDir = [], "/task/student/sanitizer"
-    try:
-        os.chdir(sanitizerDir)
-        for file in glob.glob("*.log"):
-            if os.path.isfile(file):
-                onlyfiles.append(file)
-            else:
-                print("scenario memory log file path is wrong:" + file)
-    except:
-        print("Directory " + sanitizerDir + " doesn't exist.")
-
-
+def sanitize(sanitizerDir, sanitizerFile):
     runtimeErrorList = {}
+    onlyfiles = []
+    if sanitizerFile != "None":
+        onlyfiles = [sanitizerDir+"\\"+sanitizerFile]
+    else:
+        try:
+            os.chdir(sanitizerDir)
+            for file in glob.glob("*.log"):
+                if os.path.isfile(file):
+                    onlyfiles.append(file)
+                else:
+                    print("scenario memory log file path is wrong:" + file)
+        except:
+            print("Directory " + sanitizerDir + " doesn't exist.")
+            return runtimeErrorList
+
+
+
+
     for file in onlyfiles:
 
         with open(file, 'r') as fin:
