@@ -18,7 +18,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:37: Bad lin
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:37: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:38: Curly bracket tab indentation incorrect, found 33 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:38: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:39: Spacing for identifier/literal in  operator [] ,supposed to be '[ f*size+i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:39: Spacing for identifier/literal in operator [], supposed to be '[ f*size+i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:39: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:39: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:40: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -26,7 +26,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:40: Bad lin
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:41: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:42: Curly bracket tab indentation incorrect, found 33 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:42: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:43: Spacing for identifier/literal in  operator [] ,supposed to be '[ f*size+i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:43: Spacing for identifier/literal in operator [], supposed to be '[ f*size+i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:43: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:43: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:44: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -38,7 +38,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:50: Bad lin
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:50: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:51: Curly bracket tab indentation incorrect, found 26 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:51: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:52: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:52: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:52: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:52: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:53: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -53,7 +53,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:60: Bad lin
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:60: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:61: Curly bracket tab indentation incorrect, found 30 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:61: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:62: Spacing for identifier/literal in  operator [] ,supposed to be '[ i*size+s ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:62: Spacing for identifier/literal in operator [], supposed to be '[ i*size+s ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:62: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:62: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:63: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -61,7 +61,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:63: Bad lin
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:64: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:65: Curly bracket tab indentation incorrect, found 30 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:65: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:66: Spacing for identifier/literal in  operator [] ,supposed to be '[ i*size+s ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:66: Spacing for identifier/literal in operator [], supposed to be '[ i*size+s ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:66: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:66: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:67: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -232,7 +232,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:169: Bad li
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:176: Uninitialized identifier 'i' of type int.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:176: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:176: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:177: Spacing for identifier/literal in  operator {} ,supposed to be '{ 0 }'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:177: Spacing for identifier/literal in operator {}, supposed to be '{ 0 }'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:177: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:178: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:180: Bad line indentation, expected to start with 0 tab(s).
@@ -250,7 +250,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:192: Bad li
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:193: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:195: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:196: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:200: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:200: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:200: Full block {} expected in the control structure.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:200: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:201: Bad line indentation, expected to start with 0 tab(s).
@@ -299,7 +299,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:227: Bad li
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:228: Curly bracket tab indentation incorrect, found 30 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:228: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:228: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:229: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:229: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:229: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:229: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:229: Bad line indentation, expected to start with 0 tab(s).
@@ -440,26 +440,26 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:315: Bad li
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:315: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:316: Curly bracket tab indentation incorrect, found 28 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:316: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:317: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:317: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:317: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:317: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:318: Curly bracket tab indentation incorrect, found 46 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:318: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:319: Spacing for identifier/literal in  operator [] ,supposed to be '[ i*l.c*l.size*l.size+j ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:319: Spacing for identifier/literal in operator [], supposed to be '[ i*l.c*l.size*l.size+j ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:319: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:319: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:320: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:320: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:321: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:321: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:321: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:321: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:322: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:322: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:322: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:322: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:323: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:323: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:323: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:323: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:324: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:324: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:324: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:324: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:325: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -496,10 +496,10 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:344: Bad li
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:344: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:345: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:345: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:346: Spacing for identifier/literal in  operator {} ,supposed to be '{ 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3 }'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:346: Spacing for identifier/literal in operator {}, supposed to be '{ 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3 }'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:346: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:346: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:347: Spacing for identifier/literal in  operator {} ,supposed to be '{ 0 }'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:347: Spacing for identifier/literal in operator {}, supposed to be '{ 0 }'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:347: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:348: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:348: Bad line indentation, expected to start with 0 tab(s).
@@ -567,8 +567,8 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:397: Curly 
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:397: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:398: Curly bracket tab indentation incorrect, found 37 characters but expected 3 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:398: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:399: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:399: Spacing for identifier/literal in  operator [] ,supposed to be '[ (b*n+i)*size+j ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:399: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:399: Spacing for identifier/literal in operator [], supposed to be '[ (b*n+i)*size+j ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:399: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:399: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:400: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -588,8 +588,8 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:409: Curly 
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:409: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:410: Curly bracket tab indentation incorrect, found 37 characters but expected 3 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:410: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:411: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:411: Spacing for identifier/literal in  operator [] ,supposed to be '[ (b*n+i)*size+j ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:411: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:411: Spacing for identifier/literal in operator [], supposed to be '[ (b*n+i)*size+j ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:411: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:411: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:412: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -606,7 +606,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:420: Curly 
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:420: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:421: Curly bracket tab indentation incorrect, found 30 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:421: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:422: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:422: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:422: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:422: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:423: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -657,7 +657,6 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:453: Bad li
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:454: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:454: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:454: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:455: Uninitialized identifier 'n' of type c.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:455: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:455: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:455: Bad line indentation, expected to start with 0 tab(s).
@@ -740,6 +739,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:502: Closin
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:502: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:503: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:503: Bad line indentation, expected to start with 0 tab(s).
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:508: Uninitialized identifier 'size' of type int.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:508: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:508: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:509: Bad line indentation, expected to start with 1 tab(s).
@@ -764,6 +764,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:525: Bad li
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:525: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:526: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:526: Bad line indentation, expected to start with 0 tab(s).
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:527: Uninitialized identifier 'c' of type int.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:527: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:527: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:528: Bad line indentation, expected to start with 1 tab(s).
@@ -796,7 +797,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:548: Bad li
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:548: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:549: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:549: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:550: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:550: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:550: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:550: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:551: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -810,7 +811,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:558: Bad li
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:558: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:559: Curly bracket tab indentation incorrect, found 28 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:559: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:560: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:560: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:560: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:560: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:562: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -820,7 +821,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:568: Bad li
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:569: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:571: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:572: Bad line indentation, expected to start with 1 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:573: Spacing for identifier/literal in  operator [] ,supposed to be '[ 256 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:573: Spacing for identifier/literal in operator [], supposed to be '[ 256 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:573: Uninitialized identifier 'buff' of type char.
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:573: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\convolutional_layer.c:574: Bad line indentation, expected to start with 1 tab(s).

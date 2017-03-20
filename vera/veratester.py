@@ -34,13 +34,14 @@ def testFiles(fileList, dir, cmdMaker,reportTime = False):
                     for line in diff:
                         diffList.append((file,line))
         if reportTime:
-            repeat = 100
+            repeat = 10
             time = timeit("sub.Popen(list(" + str(cmd) + "), stdout=sub.PIPE, stderr=sub.PIPE).communicate()",
                           setup="import subprocess as sub", number=repeat)
             print("Time "+nameOnly+": " + str(time*1000/repeat))
     for file, differentLine in diffList:
         #if differentLine[:3] in ["---", "+++"] or differentLine[0] in ["@","-"]: continue
         print("In file:"+file+" non-matching line:<"+differentLine+">")
+        pass
 
 
 os.chdir((".."))
@@ -49,15 +50,19 @@ testsDir = dir + "\\tests\\"
 filesIter = os.walk(testsDir)
 
 path, _, fileList = next(filesIter)
- 
+
 
 testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ])
 sanitizerDir = testsDir+"sanitizer"
 filesIter = os.walk(sanitizerDir)
 path, _, fileList = next(filesIter)
-#testFiles(fileList, sanitizerDir, lambda f,e: ['vera++', '-d', '--root', dir,'-P', 'sanitizer-dir='+sanitizerDir,'-P', 'sanitizer-file='+f+".log", sanitizerDir+"\\"+f+e ])
+testFiles(fileList, sanitizerDir, lambda f,e: ['vera++', '-d', '--root', dir,'-P', 'sanitizer-dir='+sanitizerDir,'-P', 'sanitizer-file='+f+".log", sanitizerDir+"\\"+f+e ])
 
 testsDir = dir + "\\examples\\"
 fileList = ["nginx.c","mergesort.c", "convolutional_layer.c"]
 testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ],True)
 
+testsDir = dir + "\\tests\\weirdos\\"
+filesIter = os.walk(testsDir)
+path, _, fileList = next(filesIter)
+testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ])

@@ -18,13 +18,14 @@ controlTokenTypes = {"for", "if", "while", "do", "else", "leftparen", "rightpare
                      "semicolon","not"}
 
 operators = { "plus", "plusplus","notequal", "minus", "minusminus", "less", "greater", "greaterequal"}
-assignOperators = { "assign" , "percentassign", "minusassign", "plusassign" }
+assignOperators = { "assign" , "percentassign", "minusassign", "plusassign", "andassign", "divideassign",
+                    "orassign", "starassign", "shiftleftassign", "shiftrightassign", "xorassign" }
 stackContinueTokens = {"star", "identifier", "leftbracket", "rightbracket", "malloc", "leftbrace","comma",
                   "rightbrace", "int", "char", "leftparen", "rightparen", "identifier","arrow","dot", "not",
                        "const"}  | literals | types | operators | assignOperators
-stackConsiderTokens = { "leftbracket", "rightbracket", "identifier", "assign", "intlit", "charlit", "stringlit", "comma",
+stackConsiderTokens = { "leftbracket", "rightbracket", "identifier", "intlit", "charlit", "stringlit", "comma",
                        "semicolon", "leftbrace", "rightbrace", "leftparen", "rightparen", "star", "arrow", "dot", "not",
-                       "for", "if","while", "switch", "struct", "const", "pp_define", "newline"} | types | operators
+                       "for", "if","while", "switch", "struct", "const", "pp_define", "newline"} | types | operators | assignOperators
 fileInfoDict = {}
 libFunctions = { "strlen","fgets","strcmp" }
 recursiveTokenNames = {"rightbracket" : "leftbracket" , "rightbrace" : "leftbrace", "rightparen" : "leftparen"}
@@ -78,6 +79,9 @@ def pushFirstToken(stack, globalState, state, t):
     elif t.type == "pp_define":
         state["define"] = t
 
+    elif t.type == "star":
+        state["dereference"] = t
+
 
 def pushSemicolon(stack, stackList, state, t):
     if "struct" in state:
@@ -92,9 +96,9 @@ def pushSemicolon(stack, stackList, state, t):
     return stack, state
 
 
-def pushContinueToken(functionOrControl, stack, state, t):
-    maybeTypeToken = "assign" not in state and "dereference" not in state and "type" not in state and not functionOrControl
-    if t.type == "assign":
+def pushContinueToken(stack, state, t, functionOrControl, assignOpPresent):
+    maybeTypeToken = not assignOpPresent and "dereference" not in state and "type" not in state and not functionOrControl
+    if t.type in assignOperators:
         state.setdefault("assign", t)
         state.setdefault("assignments", [])
         state["assignments"].append(t)
@@ -123,7 +127,7 @@ def pushContinueToken(functionOrControl, stack, state, t):
             state.setdefault("stars",[[]])
             state["stars"][-1] += [t]
 
-    elif t.type in ["arrow", "dot"] and "assign" not in state:
+    elif t.type in ["arrow", "dot"] and not assignOpPresent:
         state["dereference"] = t
 
     elif t.type == "comma":
@@ -207,12 +211,13 @@ def pushInitializationStack(fileName):
 
 
         else:
+            assignOpPresent = bool([op for op in assignOperators if op in state])
             if "structDefinition" in globalState:
                 state["structDefinition"] = globalState["structDefinition"]
             if t.type in ["leftbracket","leftparen", "leftbrace"]:
-                if "recursive" not in state and "assign" not in state:
+                if "recursive" not in state and not assignOpPresent:
                     state["recursive"] = t
-                    if t.type == "leftparen" and "control" not in state:
+                    if t.type == "leftparen" and "control" not in state and "dereference" not in state:
                         state["function"] = state.pop("identifier")
                         state["leftParen"] = 0
             #This variable signifies the fact that the first control token encountered out of [,(,{ is not '('
@@ -220,7 +225,7 @@ def pushInitializationStack(fileName):
             functionOrControl = "recursive" in state and state["recursive"].type == "leftparen"
             isArray = "recursive" in state and state["recursive"].type == "leftbracket"
 
-            if t.type in checkBreakLine and not isArray and not functionOrControl and not [op for op in assignOperators if op in state]:
+            if t.type in checkBreakLine and not isArray and not functionOrControl and not assignOpPresent:
                 stack, state = [], {}
 
             elif t.type == "identifier" and "type" in state and not functionOrControl and prev.type == "comma":
@@ -233,7 +238,7 @@ def pushInitializationStack(fileName):
                 if "control" in state or "function" in state:
                     stack, state = pushControlToken(stack, stackList, state, t)
                 else:
-                    pushContinueToken(functionOrControl, stack, state, t)
+                    pushContinueToken(stack, state, t, functionOrControl, assignOpPresent)
 
             elif t.type == "semicolon":
                 stack, state = pushSemicolon(stack, stackList, state, t)
@@ -271,20 +276,21 @@ def popRecursiveAux(stack, token, tokenList,fileName):
     correctFormat = (endToken.value + " " + correctFormat) if spaceTokens else (endToken.value + correctFormat)
     literalEndColumn = startToken.column + len(startToken.value) - 1
     if spaceTokens and (token.column - 2 < literalEndColumn or tokenList[-2].column - 2 < endToken.column):
-        error = "Spacing for identifier/literal in  operator "+endToken.value+token.value+ \
-                " ,supposed to be '" + correctFormat +"'."
+        error = "Spacing for identifier/literal in operator "+endToken.value+token.value+ \
+                ", supposed to be '" + correctFormat +"'."
         vera.report(fileName, token.line, error)
     #print(correctFormat)
     #print("FINISH> value:" + endToken.value + " line:" + str(endToken.line) + " column:" + str(endToken.column))
     return correctFormat
 
 
-def popRecursive(token, fileName, stack, state, flags, infoDict):
+def popRecursive(token, fileName, stack, state, flags, infoDict, assignOpPresent, flagsAssignOpPresent):
     defineDict, typeDict = infoDict["defineDict"], infoDict["typeDict"]
     tokenList = []
     correctFormat = popRecursiveAux(stack, token, tokenList, fileName)
     #print(correctFormat)
-    if not ("assign" in state and "assign" not in flags):
+
+    if not (assignOpPresent and not flagsAssignOpPresent):
         if "tokenList" in flags:
             flags["tokenList"] = tokenList + flags["tokenList"]
             flags["correctFormat"] = correctFormat + flags["correctFormat"]
@@ -306,13 +312,13 @@ def popRecursive(token, fileName, stack, state, flags, infoDict):
                         " supposed to be '" + identifier.value + flags["correctFormat"] + "'."
                 vera.report(fileName, token.line, error)
             tokenList = flags["tokenList"] if "tokenList" in flags else tokenList
-            if "assign" in flags:
+            if flagsAssignOpPresent:
                 for t in tokenList:
                     if t.type == "identifier" and not defineDict.has_key(t.value):
                         vera.report(fileName, t.line,
                                     "Non #define identifier '" + t.value + "' used to initialize array.")
 
-    elif token.type == "rightparen" and "malloc" in flags and "assign" not in flags:
+    elif token.type == "rightparen" and "malloc" in flags:
         identifier = state["identifier"] if "vars" not in state else state["vars"][-1]
         if "type" in state:
             type = state["type"][:]
@@ -331,27 +337,17 @@ def popRecursive(token, fileName, stack, state, flags, infoDict):
 
 
 
-def popIdentifier(identifier, fileName, stack, flags, state, infoDict):
+def popIdentifier(identifier, fileName, stack, flags, state, infoDict, assignOpPresent):
     constDict, varDict, typeDict = infoDict["constDict"], infoDict["varDict"], infoDict["typeDict"]
     # if this identifier isn't in the constDict it must be a regular variable
     # let's check for intialization
-    if [flag for flag in ["function","structDefinition"] if flag in state] or "type" not in state or identifier.value in libFunctions:
+    if [flag for flag in ["function","structDefinition","dereference"] if flag in state] or "type" not in state or identifier.value in libFunctions:
         return
+    assigned = assignOpPresent and state["assignments"] and isBefore(identifier,state["assignments"][-1])
 
-    assigned = "assign" in state and ("comma" not in state or \
-            (state["assign"].line < state["comma"].line or \
-             (state["assign"].line == state["comma"].line and state["assign"].column < state["comma"].column)))
-    if "vars" in state and state["vars"][-1].value == identifier.value:
-
-        assigned = False
-        if "assignments" in state:
-            assign = state["assignments"][-1]
-            assigned = assign.line > identifier.line or (assign.line == identifier.line and assign.column > identifier.column)
-            if assigned:
-                del state["assignments"][-1]
-                if not state["assignments"]:
-                    del state["assignments"]
-
+    if "vars" in state:
+        if state["vars"][-1].value != identifier.value:
+            return
     elif identifier.value != state["identifier"].value:
         return
     varDict[identifier.value] = identifier
@@ -372,16 +368,19 @@ def popIdentifier(identifier, fileName, stack, flags, state, infoDict):
     if not assigned:
         vera.report(fileName,identifier.line, "Uninitialized identifier '" + identifier.value + "' of type " + identifierType + ".")
 
-    else:
-        return None
+
 
 
 def popAssign(token, fileName, stack, flags, state, mallocDict):
     # we encountered '=', so we are now ready for the variable identifier
+    if "assignments" not in state or not (state["assignments"][-1].line == token.line and state["assignments"][-1].column == token.column):
+        return
     flags["assign"] = token
+
     if "malloc" in flags:
         if "mallocType" not in flags:
             vera.report(fileName, token.line, "Malloc lacks a pointer cast.")
+
         else:
             del flags["mallocType"]
         pointerIdentifier = state["identifier"] if "vars" not in state else state["vars"][-1]
@@ -394,7 +393,7 @@ def popStar(token, fileName, flags, state): #Justin Bieber
     # the star '*' was encountered, let's check it isn't the cast* star and if it isn't
     # then it's the pointer definition's * star so let's check it's next to the type
     # with a space from the variable
-    if "type" not in state or "identifier" not in state or "stars" not in state or not state["stars"][-1]:
+    if "type" not in state or "identifier" not in state or "stars" not in state or not state["stars"] or not state["stars"][-1]:
         return
 
     type, star = state["type"] + flags["stars"], state["stars"][-1].pop()
@@ -465,8 +464,11 @@ def popInitializationStack(fileName, stackList):
             funcDict[state["function"].value] = state["function"]
         #printTokens(stack,"Between while stack:")
         #print("Between while state:"+str(state))
+        assignOpPresent = bool([op for op in assignOperators if op in state])
+
         while len(stack) > 0:
             token = stack.pop()
+            flagsAssignOpPresent = bool([op for op in assignOperators if op in flags])
             #print("type:"+token.type+" value:"+token.value+" line:"+str(token.line)+ " column:"+str(token.column))
             if token.type == "semicolon":
                 # we're beginning a new command
@@ -477,21 +479,21 @@ def popInitializationStack(fileName, stackList):
                 flags["malloc"] = token
 
             elif token.type in recursiveTokenNames:
-                popRecursive(token, fileName, stack, state, flags, infoDict)
+                popRecursive(token, fileName, stack, state, flags, infoDict,assignOpPresent, flagsAssignOpPresent)
 
             elif token.type in literals:
                 # we encountered a literal, we can now check the literal flag, because a value is being assigned
                 flags["literal"] = token
 
-            elif token.type == "assign":
+            elif token.type in assignOperators:
                 popAssign(token, fileName, stack, flags, state, mallocDict)
 
             elif token.type == "identifier":
-                result = popIdentifier(token, fileName, stack, flags, state, infoDict)
+                result = popIdentifier(token, fileName, stack, flags, state, infoDict, assignOpPresent)
                 if result is not None:
                     errors.append(result)
 
-            elif token.type == "star" and ("assign" in flags or "assign" not in state):
+            elif token.type == "star" and (flagsAssignOpPresent or not assignOpPresent):
                 popStar(token, fileName, flags, state)
             elif token.type == "comma" and "commas" in state and state["commas"][-1].line == token.line  \
                     and state["commas"][-1].column == token.column:
@@ -504,8 +506,8 @@ def popInitializationStack(fileName, stackList):
                         del state["vars"]
                 if "stars" in state and state["stars"]:
                     state["stars"].pop()
-                if "assign" in flags:
-                    flags.pop("assign")
+                if "assignments" in state and state["assignments"] and isBefore(token,state["assignments"][-1]):
+                    state["assignments"].pop()
 
     return infoDict
 
@@ -773,7 +775,7 @@ def veraAnalysis():
 
 def addDictionaryIdentifiers(dict,file, pointerLineDict):
     for identifierK, identifierV in dict.iteritems():
-        if not pointerLineDict[file].has_key(identifierV.line):
+        if identifierV.line not in pointerLineDict[file]:
             pointerLineDict[file][identifierV.line] = {}
         pointerLineDict[file][identifierV.line][identifierV.value] = identifierV
 
@@ -784,10 +786,10 @@ def populateIdentifierLines(file, pointerLineDict):
     pointerLineDict[file] = {}
     infoDict = fileInfoDict[file]
     constDict, varDict, mallocDict = infoDict["constDict"], infoDict["varDict"], infoDict["mallocDict"]
-    mallocDict = {k:v[0] for k,v in mallocDict.iteritems()}
+    mallocDict = {identifier:varDict[identifier] for identifier,mallocList in mallocDict.iteritems()}
     addDictionaryIdentifiers(mallocDict,file,pointerLineDict)
     addDictionaryIdentifiers(varDict,file,pointerLineDict)
-    #addDictionaryIdentifiers(constDict,file)
+    addDictionaryIdentifiers(constDict,file,pointerLineDict)
 
 
 def lookupRecurrentIdentifiers(file, pointerLineDict):

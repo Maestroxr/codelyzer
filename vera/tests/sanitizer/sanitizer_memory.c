@@ -7,13 +7,16 @@ int main(int argc, char** argv)
 	/*
 		Memory Sanitizer
 	*/
-	int* arr = new int[ 10 ];
+	int* arr = (int*)malloc(7);
 	arr[ 5 ] = 0; // BOOM Uninitialized memory read   -V-
 	if (arr[ 7 ]) 
 	{
 		printf("xx\n");
 	}
 
-	
+	if (!arr)
+	{
+		res = -2;
+	}
 	return res;
 }

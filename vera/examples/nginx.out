@@ -1,7 +1,7 @@
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:25: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:27: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:34: Curly bracket tab indentation incorrect, found 45 characters but expected 0 tabs.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:38: Spacing for identifier/literal in  operator {} ,supposed to be '{ { ngx_string("stop"),NGX_DEBUG_POINTS_STOP },{ ngx_string("abort"),NGX_DEBUG_POINTS_ABORT },{ ngx_null_string,0 } }'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:38: Spacing for identifier/literal in operator {}, supposed to be '{ { ngx_string("stop"),NGX_DEBUG_POINTS_STOP },{ ngx_string("abort"),NGX_DEBUG_POINTS_ABORT },{ ngx_null_string,0 } }'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:38: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:41: Curly bracket tab indentation incorrect, found 44 characters but expected 0 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:43: Curly bracket tab indentation incorrect, found 4 characters but expected 1 tabs.
@@ -254,7 +254,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:153: Closing curly bracke
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:153: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:155: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:155: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:156: Spacing for identifier/literal in  operator {} ,supposed to be '{ { ngx_string("daemon"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_FLAG,ngx_conf_set_flag_slot,0,offsetof(ngx_core_conf_t,daemon),NULL },{ ngx_string("master_process"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_FLAG,ngx_conf_set_flag_slot,0,offsetof(ngx_core_conf_t,master),NULL },{ ngx_string("timer_resolution"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_msec_slot,0,offsetof(ngx_core_conf_t,timer_resolution),NULL },{ ngx_string("pid"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_str_slot,0,offsetof(ngx_core_conf_t,pid),NULL },{ ngx_string("lock_file"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_str_slot,0,offsetof(ngx_core_conf_t,lock_file),NULL },{ ngx_string("worker_processes"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_set_worker_processes,0,0,NULL },{ ngx_string("debug_points"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_enum_slot,0,offsetof(ngx_core_conf_t,debug_points),ngx_debug_points },{ ngx_string("user"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE12,ngx_set_user,0,0,NULL },{ ngx_string("worker_priority"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_set_priority,0,0,NULL },{ ngx_string("worker_cpu_affinity"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_1MORE,ngx_set_cpu_affinity,0,0,NULL },{ ngx_string("worker_rlimit_nofile"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_num_slot,0,offsetof(ngx_core_conf_t,rlimit_nofile),NULL },{ ngx_string("worker_rlimit_core"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_off_slot,0,offsetof(ngx_core_conf_t,rlimit_core),NULL },{ ngx_string("worker_shutdown_timeout"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_msec_slot,0,offsetof(ngx_core_conf_t,shutdown_timeout),NULL },{ ngx_string("working_directory"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_str_slot,0,offsetof(ngx_core_conf_t,working_directory),NULL },{ ngx_string("env"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_set_env,0,0,NULL },{ ngx_string("load_module"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_load_module,0,0,NULL },ngx_null_command }'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:156: Spacing for identifier/literal in operator {}, supposed to be '{ { ngx_string("daemon"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_FLAG,ngx_conf_set_flag_slot,0,offsetof(ngx_core_conf_t,daemon),NULL },{ ngx_string("master_process"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_FLAG,ngx_conf_set_flag_slot,0,offsetof(ngx_core_conf_t,master),NULL },{ ngx_string("timer_resolution"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_msec_slot,0,offsetof(ngx_core_conf_t,timer_resolution),NULL },{ ngx_string("pid"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_str_slot,0,offsetof(ngx_core_conf_t,pid),NULL },{ ngx_string("lock_file"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_str_slot,0,offsetof(ngx_core_conf_t,lock_file),NULL },{ ngx_string("worker_processes"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_set_worker_processes,0,0,NULL },{ ngx_string("debug_points"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_enum_slot,0,offsetof(ngx_core_conf_t,debug_points),ngx_debug_points },{ ngx_string("user"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE12,ngx_set_user,0,0,NULL },{ ngx_string("worker_priority"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_set_priority,0,0,NULL },{ ngx_string("worker_cpu_affinity"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_1MORE,ngx_set_cpu_affinity,0,0,NULL },{ ngx_string("worker_rlimit_nofile"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_num_slot,0,offsetof(ngx_core_conf_t,rlimit_nofile),NULL },{ ngx_string("worker_rlimit_core"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_off_slot,0,offsetof(ngx_core_conf_t,rlimit_core),NULL },{ ngx_string("worker_shutdown_timeout"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_msec_slot,0,offsetof(ngx_core_conf_t,shutdown_timeout),NULL },{ ngx_string("working_directory"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_conf_set_str_slot,0,offsetof(ngx_core_conf_t,working_directory),NULL },{ ngx_string("env"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_set_env,0,0,NULL },{ ngx_string("load_module"),NGX_MAIN_CONFNGX_DIRECT_CONFNGX_CONF_TAKE1,ngx_load_module,0,0,NULL },ngx_null_command }'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:156: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:159: Curly bracket tab indentation incorrect, found 48 characters but expected 0 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:160: Bad line indentation, expected to start with 1 tab(s).
@@ -263,14 +263,14 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:161: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:161: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:162: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:162: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:163: Spacing for identifier/literal in  operator {} ,supposed to be '{ ngx_string("core"),ngx_core_module_create_conf,ngx_core_module_init_conf }'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:163: Spacing for identifier/literal in operator {}, supposed to be '{ ngx_string("core"),ngx_core_module_create_conf,ngx_core_module_init_conf }'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:163: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:166: Curly bracket tab indentation incorrect, found 32 characters but expected 0 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:167: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:167: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:178: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:178: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:179: Spacing for identifier/literal in  operator {} ,supposed to be '{ NGX_MODULE_V1,ngx_core_module_ctx,ngx_core_commands,NGX_CORE_MODULE,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NGX_MODULE_V1_PADDING }'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:179: Spacing for identifier/literal in operator {}, supposed to be '{ NGX_MODULE_V1,ngx_core_module_ctx,ngx_core_commands,NGX_CORE_MODULE,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NGX_MODULE_V1_PADDING }'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:179: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:182: Uninitialized identifier 'ngx_show_help' of type ngx_uint_t.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:183: Uninitialized identifier 'ngx_show_version' of type ngx_uint_t.
@@ -456,18 +456,18 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:303: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:305: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:305: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:305: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:306: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:306: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:306: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:306: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:306: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:307: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:307: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:307: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:307: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:307: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:308: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:308: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:308: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:310: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:310: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:310: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:310: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:310: Bad line indentation, expected to start with 0 tab(s).
@@ -821,11 +821,11 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:518: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:520: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:520: Curly bracket tab indentation incorrect, found 41 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:520: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:521: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:521: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:521: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:521: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:521: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:522: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:522: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:522: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:522: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:522: Bad line indentation, expected to start with 0 tab(s).
@@ -857,9 +857,9 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:540: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:542: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:542: Curly bracket tab indentation incorrect, found 41 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:542: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:544: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:544: Spacing for identifier/literal in  operator [] ,supposed to be '[ var[ i ].len ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:544: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:544: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:544: Spacing for identifier/literal in operator [], supposed to be '[ var[ i ].len ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:544: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:544: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:544: Curly bracket tab indentation incorrect, found 44 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:544: Bad line indentation, expected to start with 1 tab(s).
@@ -877,12 +877,12 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:549: Control structure of
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:549: Curly bracket tab indentation incorrect, found 42 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:549: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:549: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:551: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:551: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:551: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:551: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:551: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:552: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:552: Spacing for identifier/literal in  operator [] ,supposed to be '[ var[ i ].len ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:552: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:552: Spacing for identifier/literal in operator [], supposed to be '[ var[ i ].len ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:552: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:552: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:552: Bad line indentation, expected to start with 0 tab(s).
@@ -966,15 +966,15 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:583: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:585: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:585: Curly bracket tab indentation incorrect, found 41 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:585: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:587: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:587: Spacing for identifier/literal in  operator [] ,supposed to be '[ var[ i ].len ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:587: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:587: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:587: Spacing for identifier/literal in operator [], supposed to be '[ var[ i ].len ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:587: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:587: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:587: Curly bracket tab indentation incorrect, found 44 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:587: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:587: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:588: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:588: Spacing for identifier/literal in  operator [] ,supposed to be '[ n++ ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:588: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:588: Spacing for identifier/literal in operator [], supposed to be '[ n++ ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:588: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:588: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:588: Bad line indentation, expected to start with 0 tab(s).
@@ -988,12 +988,12 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:592: Control structure of
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:592: Curly bracket tab indentation incorrect, found 42 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:592: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:592: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:594: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:594: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:594: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:594: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:594: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:595: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:595: Spacing for identifier/literal in  operator [] ,supposed to be '[ var[ i ].len ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:595: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:595: Spacing for identifier/literal in operator [], supposed to be '[ var[ i ].len ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:595: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:595: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:595: Bad line indentation, expected to start with 0 tab(s).
@@ -1001,7 +1001,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:596: Control structure of
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:596: Curly bracket tab indentation incorrect, found 12 characters but expected 3 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:596: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:596: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:597: Spacing for identifier/literal in  operator [] ,supposed to be '[ n++ ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:597: Spacing for identifier/literal in operator [], supposed to be '[ n++ ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:597: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:597: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:597: Bad line indentation, expected to start with 0 tab(s).
@@ -1015,7 +1015,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:600: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:600: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:601: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:601: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:603: Spacing for identifier/literal in  operator [] ,supposed to be '[ n ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:603: Spacing for identifier/literal in operator [], supposed to be '[ n ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:603: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:605: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:605: Curly bracket tab indentation incorrect, found 22 characters but expected 1 tabs.
@@ -1073,7 +1073,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:642: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:642: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:644: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:644: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:646: Spacing for identifier/literal in  operator [] ,supposed to be '[ 0 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:646: Spacing for identifier/literal in operator [], supposed to be '[ 0 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:646: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:646: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:647: Bad line indentation, expected to start with 1 tab(s).
@@ -1111,22 +1111,22 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:666: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:667: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:667: Curly bracket tab indentation incorrect, found 49 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:667: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:668: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:668: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:668: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:668: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:668: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:669: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:669: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:671: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:673: Spacing for identifier/literal in  operator [] ,supposed to be '[ n++ ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:673: Spacing for identifier/literal in operator [], supposed to be '[ n++ ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:673: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:679: Spacing for identifier/literal in  operator [] ,supposed to be '[ n++ ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:679: Spacing for identifier/literal in operator [], supposed to be '[ n++ ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:679: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:680: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:681: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:682: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:683: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:687: Spacing for identifier/literal in  operator [] ,supposed to be '[ n ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:687: Spacing for identifier/literal in operator [], supposed to be '[ n ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:687: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:690: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:690: Curly bracket tab indentation incorrect, found 4 characters but expected 1 tabs.
@@ -1162,7 +1162,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:704: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:705: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:705: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:705: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:706: Spacing for identifier/literal in  operator [] ,supposed to be '[ 0 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:706: Spacing for identifier/literal in operator [], supposed to be '[ 0 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:706: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:706: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:706: Bad line indentation, expected to start with 0 tab(s).
@@ -1195,7 +1195,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:721: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:721: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:722: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:722: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:723: Spacing for identifier/literal in  operator [] ,supposed to be '[ 0 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:723: Spacing for identifier/literal in operator [], supposed to be '[ 0 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:723: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:723: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:724: Bad line indentation, expected to start with 0 tab(s).
@@ -1218,13 +1218,13 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:738: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:740: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:740: Curly bracket tab indentation incorrect, found 31 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:740: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:742: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:742: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:742: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:742: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:744: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:744: Curly bracket tab indentation incorrect, found 25 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:744: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:745: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:745: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:745: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:745: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:746: Bad line indentation, expected to start with 3 tab(s).
@@ -1292,11 +1292,11 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:784: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:784: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:785: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:785: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:787: Spacing for identifier/literal in  operator [] ,supposed to be '[ ++i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:787: Spacing for identifier/literal in operator [], supposed to be '[ ++i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:787: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:787: Curly bracket tab indentation incorrect, found 31 characters but expected 4 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:787: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:788: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:788: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:788: Bad line indentation, expected to start with 5 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:788: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:788: Bad line indentation, expected to start with 0 tab(s).
@@ -1320,11 +1320,11 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:798: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:798: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:799: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:799: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:801: Spacing for identifier/literal in  operator [] ,supposed to be '[ ++i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:801: Spacing for identifier/literal in operator [], supposed to be '[ ++i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:801: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:801: Curly bracket tab indentation incorrect, found 31 characters but expected 4 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:801: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:802: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:802: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:802: Bad line indentation, expected to start with 5 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:802: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:802: Bad line indentation, expected to start with 0 tab(s).
@@ -1348,11 +1348,11 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:812: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:812: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:813: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:813: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:815: Spacing for identifier/literal in  operator [] ,supposed to be '[ ++i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:815: Spacing for identifier/literal in operator [], supposed to be '[ ++i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:815: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:815: Curly bracket tab indentation incorrect, found 31 characters but expected 4 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:815: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:816: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:816: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:816: Bad line indentation, expected to start with 5 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:816: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:816: Bad line indentation, expected to start with 0 tab(s).
@@ -1371,12 +1371,12 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:824: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:825: Bad line indentation, expected to start with 5 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:825: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:825: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:827: Spacing for identifier/literal in  operator [] ,supposed to be '[ ++i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:827: Spacing for identifier/literal in operator [], supposed to be '[ ++i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:827: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:827: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:827: Curly bracket tab indentation incorrect, found 38 characters but expected 4 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:827: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:828: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:828: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:828: Bad line indentation, expected to start with 5 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:828: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:828: Bad line indentation, expected to start with 0 tab(s).
@@ -1461,13 +1461,13 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:881: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:883: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:883: Curly bracket tab indentation incorrect, found 31 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:883: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:884: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:884: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:884: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:884: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:886: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:886: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:886: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:886: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:887: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:887: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:887: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:887: Curly bracket tab indentation incorrect, found 33 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:887: Bad line indentation, expected to start with 0 tab(s).
@@ -1476,12 +1476,12 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:888: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:888: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:889: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:889: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:891: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:891: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:891: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:891: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:892: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:892: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:894: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:894: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:894: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:894: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:896: Bad line indentation, expected to start with 1 tab(s).
@@ -1504,7 +1504,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:911: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:911: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:912: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:912: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:914: Spacing for identifier/literal in  operator [] ,supposed to be '[ len-1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:914: Spacing for identifier/literal in operator [], supposed to be '[ len-1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:914: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:914: Curly bracket tab indentation incorrect, found 52 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:914: Bad line indentation, expected to start with 0 tab(s).
@@ -1519,7 +1519,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:918: Closing curly bracke
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:918: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:920: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:920: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:921: Spacing for identifier/literal in  operator [] ,supposed to be '[ len++ ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:921: Spacing for identifier/literal in operator [], supposed to be '[ len++ ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:921: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:921: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:922: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -1569,7 +1569,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:941: Bad line indentation
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:943: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:943: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:943: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:945: Spacing for identifier/literal in  operator [] ,supposed to be '[ len++ ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:945: Spacing for identifier/literal in operator [], supposed to be '[ len++ ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:945: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:945: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:945: Bad line indentation, expected to start with 0 tab(s).
@@ -1982,10 +1982,10 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1202: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1203: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1203: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1205: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1207: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1207: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1207: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1209: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1210: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1210: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1210: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1211: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1211: Curly bracket tab indentation incorrect, found 21 characters but expected 1 tabs.
@@ -1993,7 +1993,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1211: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1212: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1212: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1212: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1213: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1213: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1213: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1213: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1213: Bad line indentation, expected to start with 0 tab(s).
@@ -2004,8 +2004,8 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1214: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1215: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1215: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1217: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1219: Spacing for identifier/literal in  operator [] ,supposed to be '[ 2 ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1219: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1219: Spacing for identifier/literal in operator [], supposed to be '[ 2 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1219: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1219: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1221: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1222: Bad line indentation, expected to start with 0 tab(s).
@@ -2049,14 +2049,14 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1247: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1248: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1248: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1250: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1251: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1251: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1251: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1253: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1253: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1253: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1253: Curly bracket tab indentation incorrect, found 39 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1253: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1255: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1255: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1255: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1255: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1255: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1255: Curly bracket tab indentation incorrect, found 37 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1255: Bad line indentation, expected to start with 0 tab(s).
@@ -2090,8 +2090,8 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1276: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1277: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1277: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1279: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1281: Spacing for identifier/literal in  operator [] ,supposed to be '[ 0 ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1281: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1281: Spacing for identifier/literal in operator [], supposed to be '[ 0 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1281: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1281: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1281: Curly bracket tab indentation incorrect, found 33 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1281: Bad line indentation, expected to start with 0 tab(s).
@@ -2101,8 +2101,8 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1282: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1283: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1283: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1283: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1285: Spacing for identifier/literal in  operator [] ,supposed to be '[ 0 ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1285: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1285: Spacing for identifier/literal in operator [], supposed to be '[ 0 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1285: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1285: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1285: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1285: Curly bracket tab indentation incorrect, found 40 characters but expected 1 tabs.
@@ -2125,9 +2125,9 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1291: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1291: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1292: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1292: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1294: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1294: Spacing for identifier/literal in  operator [] ,supposed to be '[ n ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1294: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1294: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1294: Spacing for identifier/literal in operator [], supposed to be '[ n ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1294: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1294: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1295: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1295: Curly bracket tab indentation incorrect, found 36 characters but expected 1 tabs.
@@ -2188,7 +2188,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1325: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1327: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1328: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1330: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1332: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1332: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1332: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1332: Curly bracket tab indentation incorrect, found 48 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1332: Bad line indentation, expected to start with 0 tab(s).
@@ -2214,14 +2214,14 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1339: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1339: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1341: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1341: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1343: Spacing for identifier/literal in  operator [] ,supposed to be '[ 0 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1343: Spacing for identifier/literal in operator [], supposed to be '[ 0 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1343: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1343: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1344: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1344: Curly bracket tab indentation incorrect, found 74 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1344: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1344: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1345: Spacing for identifier/literal in  operator [] ,supposed to be '[ 0 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1345: Spacing for identifier/literal in operator [], supposed to be '[ 0 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1345: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1345: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1345: Bad line indentation, expected to start with 0 tab(s).
@@ -2243,7 +2243,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1352: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1354: For loops must have all three loop arguments present.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1354: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1354: Curly bracket tab indentation incorrect, found 49 characters but expected 1 tabs.
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1356: Spacing for identifier/literal in  operator [] ,supposed to be '[ n ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1356: Spacing for identifier/literal in operator [], supposed to be '[ n ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1356: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1356: Curly bracket tab indentation incorrect, found 40 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1356: Bad line indentation, expected to start with 0 tab(s).
@@ -2259,11 +2259,11 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1360: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1361: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1361: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1363: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1364: Spacing for identifier/literal in  operator [] ,supposed to be '[ n-1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1364: Spacing for identifier/literal in operator [], supposed to be '[ n-1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1364: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1366: Spacing for identifier/literal in  operator [] ,supposed to be '[ n ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1366: Spacing for identifier/literal in operator [], supposed to be '[ n ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1366: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1367: Spacing for identifier/literal in  operator [] ,supposed to be '[ n ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1367: Spacing for identifier/literal in operator [], supposed to be '[ n ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1367: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1368: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1369: Control structure of type:break is missing matching parenthesis
@@ -2290,7 +2290,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1380: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1382: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1382: Curly bracket tab indentation incorrect, found 27 characters but expected 3 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1382: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1383: Spacing for identifier/literal in  operator [] ,supposed to be '[ n-1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1383: Spacing for identifier/literal in operator [], supposed to be '[ n-1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1383: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1383: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1384: Bad line indentation, expected to start with 4 tab(s).
@@ -2349,7 +2349,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1420: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1422: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1422: Curly bracket tab indentation incorrect, found 32 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1422: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1423: Spacing for identifier/literal in  operator [] ,supposed to be '[ ccf->cpu_affinity_n-1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1423: Spacing for identifier/literal in operator [], supposed to be '[ ccf->cpu_affinity_n-1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1423: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1423: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1423: Bad line indentation, expected to start with 0 tab(s).
@@ -2395,13 +2395,13 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1443: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1445: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1445: Curly bracket tab indentation incorrect, found 33 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1445: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1446: Spacing for identifier/literal in  operator [] ,supposed to be '[ n ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1446: Spacing for identifier/literal in operator [], supposed to be '[ n ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1446: Only one 'return' token should be used in a function. Found another in line:1442
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1446: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1446: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1447: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1447: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1449: Spacing for identifier/literal in  operator [] ,supposed to be '[ ccf->cpu_affinity_n-1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1449: Spacing for identifier/literal in operator [], supposed to be '[ ccf->cpu_affinity_n-1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1449: Only one 'return' token should be used in a function. Found another in line:1446
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1449: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1449: Bad line indentation, expected to start with 0 tab(s).
@@ -2427,7 +2427,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1468: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1469: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1469: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1471: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1473: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1473: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1473: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1473: Curly bracket tab indentation incorrect, found 48 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1473: Bad line indentation, expected to start with 0 tab(s).
@@ -2440,7 +2440,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1475: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1475: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1476: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1476: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1478: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1478: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1478: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1480: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1480: Curly bracket tab indentation incorrect, found 44 characters but expected 1 tabs.
@@ -2492,7 +2492,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1500: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1501: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1501: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1503: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1505: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1505: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1505: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1507: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1507: Curly bracket tab indentation incorrect, found 59 characters but expected 1 tabs.
@@ -2544,7 +2544,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1529: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1530: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1530: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1530: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1531: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1531: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1531: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1531: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1531: Bad line indentation, expected to start with 0 tab(s).
@@ -2564,7 +2564,7 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1537: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1538: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1538: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1538: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1539: Spacing for identifier/literal in  operator [] ,supposed to be '[ 1 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1539: Spacing for identifier/literal in operator [], supposed to be '[ 1 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1539: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1539: Bad line indentation, expected to start with 1 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1539: Bad line indentation, expected to start with 0 tab(s).
@@ -2575,14 +2575,14 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1540: Bad line indentatio
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1541: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1541: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1543: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1545: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1545: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1545: Control structure of type:break is missing matching parenthesis
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1545: Curly bracket tab indentation incorrect, found 33 characters but expected 1 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1545: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1546: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1546: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1546: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1546: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1547: Spacing for identifier/literal in  operator [] ,supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1547: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1547: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1547: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\nginx.c:1549: Control structure of type:break is missing matching parenthesis

@@ -116,8 +116,8 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:139: Bad line indenta
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:140: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:141: Curly bracket tab indentation incorrect, found 35 characters but expected 2 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:141: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:142: Spacing for identifier/literal in  operator [] ,supposed to be '[ *pj ]'.
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:142: Spacing for identifier/literal in  operator [] ,supposed to be '[ *pm ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:142: Spacing for identifier/literal in operator [], supposed to be '[ *pj ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:142: Spacing for identifier/literal in operator [], supposed to be '[ *pm ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:142: Curly bracket tab indentation incorrect, found 43 characters but expected 3 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:142: Bad line indentation, expected to start with 2 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:142: Bad line indentation, expected to start with 0 tab(s).
@@ -152,14 +152,14 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:155: Curly bracket ta
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:155: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:156: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:156: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:157: Spacing for identifier/literal in  operator [] ,supposed to be '[ vi ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:157: Spacing for identifier/literal in operator [], supposed to be '[ vi ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:157: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:157: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:158: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:158: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:159: Bad line indentation, expected to start with 3 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:159: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:160: Spacing for identifier/literal in  operator [] ,supposed to be '[ *pk ]'.
+C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:160: Spacing for identifier/literal in operator [], supposed to be '[ *pk ]'.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:160: Curly bracket tab indentation incorrect, found 53 characters but expected 3 tabs.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:160: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:161: Bad line indentation, expected to start with 4 tab(s).
@@ -235,10 +235,8 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:218: Curly bracket ta
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:218: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:219: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:219: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:220: Uninitialized identifier 'len' of type pm.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:220: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:220: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:221: Uninitialized identifier 'len' of type pk.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:221: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:221: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:222: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -247,10 +245,8 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:223: Curly bracket ta
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:223: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:224: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:224: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:225: Uninitialized identifier 'len' of type pj.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:225: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:225: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:226: Uninitialized identifier 'len' of type pk.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:226: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:226: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:227: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -275,10 +271,8 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:237: Curly bracket ta
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:237: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:238: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:238: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:239: Uninitialized identifier 'len' of type pj.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:239: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:239: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:240: Uninitialized identifier 'len' of type pk.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:240: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:240: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:241: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -507,10 +501,8 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:370: Curly bracket ta
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:370: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:371: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:371: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:372: Uninitialized identifier 'elsize' of type pm.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:372: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:372: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:373: Uninitialized identifier 'elsize' of type pk.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:373: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:373: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:374: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -519,10 +511,8 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:375: Curly bracket ta
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:375: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:376: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:376: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:377: Uninitialized identifier 'elsize' of type pj.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:377: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:377: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:378: Uninitialized identifier 'elsize' of type pk.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:378: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:378: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:379: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
@@ -547,10 +537,8 @@ C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:389: Curly bracket ta
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:389: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:390: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:390: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:391: Uninitialized identifier 'elsize' of type pj.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:391: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:391: Bad line indentation, expected to start with 0 tab(s).
-C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:392: Uninitialized identifier 'elsize' of type pk.
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:392: Bad line indentation, expected to start with 4 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:392: Bad line indentation, expected to start with 0 tab(s).
 C:\Work\AutoAssessment\codelyzer\vera\examples\mergesort.c:393: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
