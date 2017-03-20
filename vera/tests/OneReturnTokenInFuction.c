@@ -31,6 +31,14 @@ int functionFour()
 	{
 		return x++;
 	}
+	if (x > 10)
+	{
+		return x-1;
+	}
+	else
+	{
+		return x+1;
+	}
 	return x;
 }
 

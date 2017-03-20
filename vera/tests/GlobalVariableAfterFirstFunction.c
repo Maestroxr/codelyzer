@@ -8,5 +8,5 @@ int main()
 	
 }
 /*PROBLEM*/
-int x = 0;
+int problem = 0;
 /*********/

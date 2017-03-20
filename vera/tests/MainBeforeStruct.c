@@ -1,8 +1,9 @@
 
 /*OK*/
-struct first{
+struct first
+{
 	int something;
-}
+};
 /*********/
 
 
@@ -15,7 +16,8 @@ int main()
 
 
 /*PROBLEM*/
-struct second{
-	int somethingElse = 2;
-}
+struct second
+{
+	int somethingElse;
+};
 /*********/

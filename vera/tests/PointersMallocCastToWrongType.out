@@ -1,0 +1,6 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocCastToWrongType.c:26: Malloc's cast is to incorrect type, pointer 'problem1' initialized as 'int*' but cast was to 'char*'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocCastToWrongType.c:31: Malloc's cast is to incorrect type, pointer 'problem2' initialized as 'int**' but cast was to 'void**'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocCastToWrongType.c:35: Malloc's cast is to incorrect type, pointer 'problem3' initialized as 'int***' but cast was to 'int*'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocCastToWrongType.c:40: Malloc's cast is to incorrect type, pointer 'problem3' initialized as 'int***' but cast was to 'int'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocCastToWrongType.c:43: Malloc's cast is to incorrect type, pointer 'problem5' initialized as 'int*****' but cast was to 'int******'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocCastToWrongType.c:43: Malloc's cast is to incorrect type, pointer 'problem4' initialized as 'int****' but cast was to 'void****'.

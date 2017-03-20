@@ -1,4 +1,0 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\StructInitialization.c:3: Curly bracket tab indentation incorrect, found 12 characters but expected 0 tabs.
-C:\Work\AutoAssessment\codelyzer\vera\tests\StructInitialization.c:5: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.
-C:\Work\AutoAssessment\codelyzer\vera\tests\StructInitialization.c:7: Curly bracket tab indentation incorrect, found 13 characters but expected 0 tabs.
-C:\Work\AutoAssessment\codelyzer\vera\tests\StructInitialization.c:9: Closing curly bracket not in the same line or column, or brackets are not both indented with tabs.

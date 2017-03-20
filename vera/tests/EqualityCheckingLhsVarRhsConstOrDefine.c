@@ -17,16 +17,26 @@ int main()
 	{
 		returnValue = 1;
 	}
+	
+	if (CONSTANT_DEFINE == CONSTANT_INT) 
+	{
+		returnValue = 1;
+	}
+	
+	if (CONSTANT_INT == CONSTANT_DEFINE) 
+	{
+		returnValue = 1;
+	}
 	/*--------*/
 	
-	
+	int problem1 = 0;
 	/*PROBLEM*/
-	if (x == CONSTANT_INT) 
+	if (problem1 == CONSTANT_INT) 
 	{
 		returnValue = -1;
 	}
-
-	if (x == CONSTANT_DEFINE) 
+	int problem2 = 0;
+	if (problem2 == CONSTANT_DEFINE) 
 	{
 		returnValue = -1;
 	}
