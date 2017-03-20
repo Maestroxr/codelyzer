@@ -49,7 +49,7 @@ testsDir = dir + "\\tests\\"
 filesIter = os.walk(testsDir)
 
 path, _, fileList = next(filesIter)
- 
+
 
 testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ])
 sanitizerDir = testsDir+"sanitizer"
