@@ -1,9 +1,10 @@
 import subprocess as sub
 import os
 import difflib
+from timeit import timeit
 import sys
 
-def testFiles(fileList, dir, cmdMaker):
+def testFiles(fileList, dir, cmdMaker,reportTime = False):
     diffList = []
     for file in fileList:
 
@@ -19,6 +20,7 @@ def testFiles(fileList, dir, cmdMaker):
         output, errors = p.communicate()
         if errors:
             print("file:"+nameOnly+" errors:"+str(errors.decode('ascii')))
+            continue
         with open(filePath+".out",'w') as outputFile:
             outputFile.write(output.decode('ascii'))
 
@@ -31,9 +33,15 @@ def testFiles(fileList, dir, cmdMaker):
 
                     for line in diff:
                         diffList.append((file,line))
+        if reportTime:
+            repeat = 100
+            time = timeit("sub.Popen(list(" + str(cmd) + "), stdout=sub.PIPE, stderr=sub.PIPE).communicate()",
+                          setup="import subprocess as sub", number=repeat)
+            print("Time "+nameOnly+": " + str(time*1000/repeat))
     for file, differentLine in diffList:
         #if differentLine[:3] in ["---", "+++"] or differentLine[0] in ["@","-"]: continue
         print("In file:"+file+" non-matching line:<"+differentLine+">")
+
 
 os.chdir((".."))
 dir = os.path.dirname(os.path.realpath(__file__))
@@ -48,3 +56,8 @@ sanitizerDir = testsDir+"sanitizer"
 filesIter = os.walk(sanitizerDir)
 path, _, fileList = next(filesIter)
 #testFiles(fileList, sanitizerDir, lambda f,e: ['vera++', '-d', '--root', dir,'-P', 'sanitizer-dir='+sanitizerDir,'-P', 'sanitizer-file='+f+".log", sanitizerDir+"\\"+f+e ])
+
+testsDir = dir + "\\examples\\"
+fileList = ["nginx.c","mergesort.c", "convolutional_layer.c"]
+testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ],True)
+
