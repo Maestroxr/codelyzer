@@ -17,6 +17,8 @@ def testFiles(fileList, dir, cmdMaker):
 
         p = sub.Popen(cmd, stdout=sub.PIPE, stderr=sub.PIPE)
         output, errors = p.communicate()
+        if errors:
+            print("file:"+nameOnly+" errors:"+str(errors.decode('ascii')))
         with open(filePath+".out",'w') as outputFile:
             outputFile.write(output.decode('ascii'))
 
@@ -41,8 +43,8 @@ filesIter = os.walk(testsDir)
 path, _, fileList = next(filesIter)
 
 
-#testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ])
+testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ])
 sanitizerDir = testsDir+"sanitizer"
 filesIter = os.walk(sanitizerDir)
 path, _, fileList = next(filesIter)
-testFiles(fileList, sanitizerDir, lambda f,e: ['vera++', '-d', '--root', dir,'-P', 'sanitizer-dir='+sanitizerDir,'-P', 'sanitizer-file='+f+".log", sanitizerDir+"\\"+f+e ])
+#testFiles(fileList, sanitizerDir, lambda f,e: ['vera++', '-d', '--root', dir,'-P', 'sanitizer-dir='+sanitizerDir,'-P', 'sanitizer-file='+f+".log", sanitizerDir+"\\"+f+e ])

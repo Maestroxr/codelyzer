@@ -8,12 +8,12 @@ int main()
 	/*********/	
 
 	/*PROBLEM*/
-	int x;
-	int y, z;
-	int a, b = 2; 
-	int c = 2, d; 
-	char s1, s2 = 2, s3;
-	char s4 = 2,s5 , s6 = 2;
+	int problem1;
+	int problem2, problem3;
+	int* problem4, b = 2; 
+	int c = 2, problem5; 
+	char** problem6, s2 = 2, problem7;
+	char s4 = 2,problem8 , s6 = 2;
 	/*********/	
 	
 	return 0;

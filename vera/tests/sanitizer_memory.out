@@ -1,6 +1,0 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory.c:11: Spacing for identifier/literal in  operator [] ,supposed to be '[ arr5 ]'.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory.c:12: Spacing for identifier/literal in  operator [] ,supposed to be '[ 7 ]'.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory.c:19: Spacing for identifier/literal in  operator [] ,supposed to be '[ 5 ]'.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory.c:20: Spacing for identifier/literal in  operator [] ,supposed to be '[ 7 ]'.
-sanitizer_memory.cpp:10: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory]: use-of-uninitialized-value, Uninitialized value was created by a heap allocation.
-sanitizer_memory.cpp:12: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory]: use-of-uninitialized-value.

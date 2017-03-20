@@ -9,7 +9,7 @@ int main()
 	{
 		returnValue = -1;
 	}
-	int* p2 = (int*)malloc(sizeof(int));
+	int* p2 = (int*)malloc(sizeof(int)),* p3 = (int*)malloc(sizeof(int));
 	if (p2 != NULL)
 	{
 		returnValue = 2;
@@ -20,40 +20,38 @@ int main()
 		returnValue = 2;
 	}
 	p1 = (int*)malloc(sizeof(int));
-	if (NULL == p1)
-	{
-		returnValue = -1;
-	}
-	int* p3 = (int*)malloc(sizeof(int));
+	
 	if (p3 == NULL)
 	{
 		returnValue = -12;
+	}
+	if (NULL == p1)
+	{
+		returnValue = -1;
 	}
 	/*--------*/
 	
 	/*PROBLEM*/
 	
-	if (!p1)
+	int* problem1 = (int*)malloc(sizeof(int));
+	int* problem2 = 0;
+	if (!problem2)
 	{
 		returnValue = -1;
 	}
-	p1 = (int*)malloc(sizeof(int));
+	problem2 = (int*)malloc(sizeof(int));
 	
 	
-	p2 = (int*)malloc(sizeof(int));
-	if (p3 != NULL)
-	{
-		returnValue = 2;
-	}
 	
-	p3 = (int*)malloc(sizeof(int));
-	p3 = (int*)malloc(sizeof(int));
-	if (p3 == NULL)
+	int* problem3 = (int*)malloc(sizeof(int));
+	problem3 = (int*)malloc(sizeof(int));
+	if (problem3 == NULL)
 	{
 		returnValue = -12;
 	}
 	
-	int* p4 = (int*)malloc(sizeof(int));
+	int* problem4 = (int*)malloc(sizeof(int)),* problem5 = (int*)malloc(sizeof(int));
+	
 
 	/*********/
 	

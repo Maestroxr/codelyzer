@@ -1,4 +1,0 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_buffer_overflow.c:11: Spacing for identifier/literal in  operator {} ,supposed to be '{ 0 }'.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_buffer_overflow.c:12: Spacing for identifier/literal in  operator [] ,supposed to be '[ argc+100 ]'.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_buffer_overflow.c:15: Spacing for identifier/literal in  operator [] ,supposed to be '[ argc+100 ]'.
-sanitizer_address-stack_buffer_overflow.cpp:12: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_buffer_overflow]: stack-buffer-overflow, READ, variable identifier: stack_array.

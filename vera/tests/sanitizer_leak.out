@@ -1,5 +1,0 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak.c:9: Malloc's cast is to incorrect type, pointer initialized as 'void**' but cast was to 'void*'.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak.c:9: Pointer's 'k' Malloc(s) missing '1' null pointer check(s).
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak.c:20: Malloc's cast is to incorrect type, pointer initialized as 'void**' but cast was to 'void*'.
-sanitizer_leak.cpp:9: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak]: detected memory leaks, Direct leak.
-sanitizer_leak.cpp:12: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak]: detected memory leaks, Direct leak.
