@@ -1,0 +1,2 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault.c:8: Uninitialized identifier 'p' of type char*.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault.c:10: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault]: SEGV on unknown address, suspect variable identifiers: p.

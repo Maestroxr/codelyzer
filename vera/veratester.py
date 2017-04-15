@@ -4,10 +4,11 @@ import difflib
 from timeit import timeit
 import sys
 
-def testFiles(fileList, dir, cmdMaker,reportTime = False):
+def testFiles(fileList, dir, cmdMaker,reportTime = False, files = set()):
     diffList = []
     for file in fileList:
-
+        if files and file not in files:
+            continue
 
         splitFile = os.path.splitext(file)
         nameOnly, extension = splitFile[0], splitFile[1]

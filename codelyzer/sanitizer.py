@@ -26,10 +26,12 @@ def sanitize(sanitizerDir, sanitizerFile):
         with open(file, 'r') as fin:
 
             read_file = fin.read()
-            pattern = re.compile(r'(?:WARNING|ERROR): [A-Za-z]+Sanitizer: (detected memory leaks|[A-Za-z-]+)((?:[\n]|.)+?(?:SUMMARY|ABORTING).*)')
+
+            pattern = re.compile(r'(?:WARNING|ERROR): [A-Za-z]+Sanitizer: (detected memory leaks|SEGV on unknown address|[A-Za-z-]+)((?:[\n]|.)+?(?:SUMMARY|ABORTING).*)')
             generalFilePattern = re.compile(
                 r'(SUMMARY:|Direct leak|allocated by thread|Uninitialized value was created by a heap allocation|freed by thread|previously allocated by thread|READ)(?:.|\n)*?\/([a-zA-Z-_ ]+.(?:cpp|c)):([0-9]+)')
             for (warning,body) in re.findall(pattern,read_file):
+
                 identifierPattern, filePattern = None, generalFilePattern
                 if warning == "global-buffer-overflow":
                     identifierPattern = re.compile(r'(?:global variable \')([a-zA-Z0-9-_]+)')
@@ -37,17 +39,22 @@ def sanitize(sanitizerDir, sanitizerFile):
                     identifierPattern = re.compile(r'\'(.+?)\' <==')
                 elif warning == "heap-use-after-free":
                     filePattern = re.compile(r'(freed by thread|previously allocated by thread|READ)(?:.|\n)*?\/([a-zA-Z-_ ]+.(?:cpp|c)):([0-9]+)')
+                elif warning == "SEGV on unknown address":
+                    filePattern = re.compile(
+                        r'(in)(?:.|\n)*?\/([a-zA-Z-_ ]+.(?:cpp|c)):([0-9]+)')
                 if identifierPattern is not None:
                     identifier = re.search(identifierPattern,body).group(1)
                 else:
                     identifier = None
 
                 for (extraInfo,codefile, line) in re.findall(filePattern,body):
+
                     if not runtimeErrorList.has_key((codefile,line)):
                         runtimeErrorList[(codefile,line)]=(warning+", "+extraInfo,identifier,{file}) \
-                            if extraInfo != "SUMMARY:" else (warning,identifier,{file})
+                            if extraInfo not in ["SUMMARY:","in"] else (warning,identifier,{file})
                     else:
                         runtimeErrorList[(codefile,line)][2].add(file)
                     #result = re.search(pattern,read_file)
+
     return runtimeErrorList
 

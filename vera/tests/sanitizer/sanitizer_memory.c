@@ -13,10 +13,11 @@ int main(int argc, char** argv)
 	{
 		printf("xx\n");
 	}
-
+	
 	if (!arr)
 	{
 		res = -2;
 	}
+	free(arr);
 	return res;
 }

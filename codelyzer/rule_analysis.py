@@ -811,10 +811,14 @@ def sanitizerAnalysis(sanirizerDir,sanitizerFile):
     pointerLineDict = {}
     fileNameOnly = { os.path.basename(k):k for k,v in fileInfoDict.items()}
     for (file, line), (warning, identifier,appearsInFiles) in runtimeErrorList.iteritems():
+
         if file not in fileInfoDict:
-            if file not in fileNameOnly: return
+            if file not in fileNameOnly:
+
+                return
             file = fileNameOnly[file]
         line, identifiers = int(line), None
+
         if identifier is not None:
             identifiers = {identifier : None}
             error = warning + ", variable identifier: "+", ".join([i for i in identifiers.keys()])+"."
@@ -830,10 +834,11 @@ def sanitizerAnalysis(sanirizerDir,sanitizerFile):
 
             else:
                 error = warning + "."
+
         scenariosString = "Memory:"+"["+",".join([os.path.splitext(scen)[0] for scen in sorted(appearsInFiles)])+"]: "
+
         error = scenariosString+error
+
         vera.report(file, line, error)
 
 
-#veraAnalysis()
-#sanitizerAnalysis()
