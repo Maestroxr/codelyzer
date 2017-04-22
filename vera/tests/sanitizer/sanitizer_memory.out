@@ -1,0 +1,5 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory.c:12: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory]: Use of uninitialized value, suspect variables: ['arr']
+	Used at:
+		#0 sanitizer_memory.c:12 in function 'main'
+	Allocated at:
+		#1 sanitizer_memory.c:10 in function 'main'
