@@ -810,7 +810,7 @@ def sanitizerAnalysis(sanirizerDir,sanitizerFile):
     runtimeErrorList= sanitize(sanirizerDir, sanitizerFile)
     pointerLineDict = {}
     fileNameOnly = { os.path.basename(k):k for k,v in fileInfoDict.items()}
-    for (file, line), (warning, identifier,appearsInFiles) in runtimeErrorList.iteritems():
+    for (file, line, error), (injectVars, appearsInFiles) in runtimeErrorList.iteritems():
 
         if file not in fileInfoDict:
             if file not in fileNameOnly:
@@ -819,22 +819,15 @@ def sanitizerAnalysis(sanirizerDir,sanitizerFile):
             file = fileNameOnly[file]
         line, identifiers = int(line), None
 
-        if identifier is not None:
-            identifiers = {identifier : None}
-            error = warning + ", variable identifier: "+", ".join([i for i in identifiers.keys()])+"."
 
-        else:
+        if injectVars is not None:
             populateIdentifierLines(file, pointerLineDict)
             if not (pointerLineDict.has_key(file) and pointerLineDict[file].has_key(line)):
                 lookupRecurrentIdentifiers(file, pointerLineDict)
             if pointerLineDict.has_key(file) and pointerLineDict[file].has_key(line):
                 identifiers = pointerLineDict[file][line]
-                error =  warning + ", suspect variable identifiers: " + ", ".join(
-                       [i for i in identifiers.keys()]) + "."
-
-            else:
-                error = warning + "."
-
+                error =  injectVars("["+", ".join(
+                       [i for i in identifiers.keys()])+"]")
         scenariosString = "Memory:"+"["+",".join([os.path.splitext(scen)[0] for scen in sorted(appearsInFiles)])+"]: "
 
         error = scenariosString+error

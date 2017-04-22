@@ -19,6 +19,7 @@ def testFiles(fileList, dir, cmdMaker,reportTime = False, files = set()):
 
         p = sub.Popen(cmd, stdout=sub.PIPE, stderr=sub.PIPE)
         output, errors = p.communicate()
+        #print(output.decode('ascii'))
         if errors:
             print("file:"+nameOnly+" errors:"+str(errors.decode('ascii')))
             continue
@@ -53,17 +54,17 @@ filesIter = os.walk(testsDir)
 path, _, fileList = next(filesIter)
 
 
-testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ])
+#testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ])
 sanitizerDir = testsDir+"sanitizer"
 filesIter = os.walk(sanitizerDir)
 path, _, fileList = next(filesIter)
-testFiles(fileList, sanitizerDir, lambda f,e: ['vera++', '-d', '--root', dir,'-P', 'sanitizer-dir='+sanitizerDir,'-P', 'sanitizer-file='+f+".log", sanitizerDir+"\\"+f+e ])
+testFiles(fileList, sanitizerDir, lambda f,e: ['vera++', '-d', '--root', dir,'-P', 'sanitizer-dir='+sanitizerDir,'-P', 'sanitizer-file='+f+".log", sanitizerDir+"\\"+f+e ],False)
 
 testsDir = dir + "\\examples\\"
 fileList = ["nginx.c","mergesort.c", "convolutional_layer.c"]
-testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ],True)
+#testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ],True)
 
 testsDir = dir + "\\tests\\weirdos\\"
 filesIter = os.walk(testsDir)
 path, _, fileList = next(filesIter)
-testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ])
+#testFiles(fileList, testsDir,lambda f,e:  ['vera++', '-d', '--root', dir,'-P', 'sanitizer-on=False', testsDir+f+e ])

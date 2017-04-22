@@ -1,2 +1,0 @@
-rule002.cpp:18: full block {} expected in the control structure
-rule002.cpp:19: full block {} expected in the control structure

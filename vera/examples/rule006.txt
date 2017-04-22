@@ -1,1 +1,0 @@
-rule006.cpp:33: Main function appears before struct defintion, main appeared at line:6.
