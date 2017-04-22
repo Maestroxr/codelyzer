@@ -1,5 +1,5 @@
 C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak.c:1: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak]: SUMMARY: LeakSanitizer: 14 byte(s) leaked in 2 allocation(s).
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak.c:9: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak]: Detected memory leaks, suspect variables: [p]
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak.c:9: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak]: Detected memory leaks, suspect variables: ['p']
 		#1 sanitizer_leak.c:15 in function 'main'
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak.c:15: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak]: Detected memory leaks, suspect variables: [p]
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak.c:15: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak]: Detected memory leaks, suspect variables: ['p']
 		#1 sanitizer_leak.c:15 in function 'main'

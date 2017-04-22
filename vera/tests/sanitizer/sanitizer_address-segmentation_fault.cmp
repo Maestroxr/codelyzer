@@ -1,4 +1,4 @@
 C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault.c:8: Uninitialized identifier 'p' of type char*.
 C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault.c:10: Spacing for identifier/literal in operator [], supposed to be '[ 100 ]'.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault.c:10: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault]: Segmentation fault, suspect variables: [p] at:
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault.c:10: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault]: Segmentation fault, suspect variables: ['p'] at:
 		#2 sanitizer_address-segmentation_fault.c:10 in function 'main'

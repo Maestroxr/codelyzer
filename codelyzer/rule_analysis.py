@@ -826,8 +826,7 @@ def sanitizerAnalysis(sanirizerDir,sanitizerFile):
                 lookupRecurrentIdentifiers(file, pointerLineDict)
             if pointerLineDict.has_key(file) and pointerLineDict[file].has_key(line):
                 identifiers = pointerLineDict[file][line]
-                error =  injectVars("["+", ".join(
-                       [i for i in identifiers.keys()])+"]")
+                error =  injectVars(str(identifiers.keys()))
         scenariosString = "Memory:"+"["+",".join([os.path.splitext(scen)[0] for scen in sorted(appearsInFiles)])+"]: "
 
         error = scenariosString+error

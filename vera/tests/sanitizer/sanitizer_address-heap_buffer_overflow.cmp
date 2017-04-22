@@ -1,4 +1,4 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow.c:13: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow]: Heap buffer overflow, suspect variables: [array]
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow.c:13: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow]: Heap buffer overflow, suspect variables: ['array']
 	Was accessed by read of size 4 at:
 		#0 sanitizer_address-heap_buffer_overflow.c:13 in function 'main'
 	Accessed address is located 4 bytes to the right of 400-byte region, allocated at:

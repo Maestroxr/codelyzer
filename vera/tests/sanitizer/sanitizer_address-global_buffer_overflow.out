@@ -1,5 +1,0 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-global_buffer_overflow.c:12: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-global_buffer_overflow]: Global variable buffer overflow, 'globalArray' from file sanitizer_address-global_buffer_overflow.c
-	Was accessed by read of size 4 at:
-		#0 sanitizer_address-global_buffer_overflow.c:12 in function 'main'
-	Accessed address is located 4 bytes to the right of global variable 'globalArray' from 'sanitizer_address-global_buffer_overflow.c',
-	of size 400
