@@ -5,4 +5,4 @@ C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory.c:9: Memo
 
 	Allocated at:
 		sanitizer_memory.c:7 in function 'main'
-
+!MemoryEnd!

@@ -4,4 +4,4 @@ C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_bu
 
 	Accessed address is located in stack of thread T0 at offset 692 in frame:
 		sanitizer_address-stack_buffer_overflow.c:5 in function 'main'
-
+!MemoryEnd!

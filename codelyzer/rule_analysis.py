@@ -829,7 +829,7 @@ def sanitizerAnalysis(sanirizerDir,sanitizerFile):
                 error =  injectVars(str(identifiers.keys()))
         scenariosString = "Memory:"+"["+",".join([os.path.splitext(scen)[0] for scen in sorted(appearsInFiles)])+"]: "
 
-        error = scenariosString+error
+        error = scenariosString+error + ":MemoryEnd:"
 
         vera.report(file, line, error)
 

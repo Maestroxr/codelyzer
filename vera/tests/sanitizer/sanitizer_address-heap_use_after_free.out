@@ -8,4 +8,4 @@ C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use
 
 	previously allocated by thread T0 here:
 		sanitizer_address-heap_use_after_free.c:7 in function 'main'
-
+!MemoryEnd!

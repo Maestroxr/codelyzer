@@ -3,4 +3,4 @@ C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-global_b
 		sanitizer_address-global_buffer_overflow.c:7 in function 'main'
 
 	Accessed address is located 4 bytes to the right of global variable 'globalArray' from 'sanitizer_address-global_buffer_overflow.c',
-	of size 400
+	of size 400!MemoryEnd!

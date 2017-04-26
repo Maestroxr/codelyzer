@@ -5,4 +5,4 @@ C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buf
 
 	Accessed address is located 4 bytes to the right of 400-byte region, allocated at:
 		sanitizer_address-heap_buffer_overflow.c:7 in function 'main'
-
+!MemoryEnd!
