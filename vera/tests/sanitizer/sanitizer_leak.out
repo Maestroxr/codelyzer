@@ -1,6 +1,6 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak.c:6: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak]: Detected memory leaks, suspect variables: ['p']
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak.c:6: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak]: Detected memory leaks, suspect variables: ['p'], sanitizer_leak.c:6
+		sanitizer_leak.c:6 in function 'main'
+:MemoryEnd:
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak.c:11: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak]: Detected memory leaks, suspect variables: ['p'], sanitizer_leak.c:11
 		sanitizer_leak.c:11 in function 'main'
-!MemoryEnd!
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak.c:11: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_leak]: Detected memory leaks, suspect variables: ['p']
-		sanitizer_leak.c:11 in function 'main'
-!MemoryEnd!
+:MemoryEnd:

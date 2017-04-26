@@ -1,1 +1,4 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault.c:8: Uninitialized identifier 'p' of type char*.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault.c:5: Uninitialized identifier 'p' of type char*.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault.c:6: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-segmentation_fault]: Segmentation fault, suspect variables: ['p'], sanitizer_address-segmentation_fault.c:6 at:
+		sanitizer_address-segmentation_fault.c:6 in function 'main'
+:MemoryEnd:

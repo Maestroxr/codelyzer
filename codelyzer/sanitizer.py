@@ -81,14 +81,22 @@ def parseOverflow(text):
     overflow += ofSize1 + ":\n" + parseTrace(atTrace)
     return overflow
 
+
+def createInjectVarsLambda(accessFile, line, error1, error2):
+    return lambda vars: error1 + ", suspect variables: " + vars + error2
+
+def createSecondError(accessFile,line):
+    return ", "+accessFile+ ":" + line
+
 def grepGlobalBufferOveflow(text):
 
     globalLocatedAtPattern = re.compile(r'(is located [0-9]+ bytes to the right of global variable \'([0-9a-zA-Z]+)\''
                          r' from \'([a-zA-Z-_ ]+.(?:cpp|c))\') (?:\(0x[0-9a-z]+\)) (of size [0-9]+)(?:.|\n)*'+summaryFilePattern)
 
     locatedAt, identifier, originFile, ofSize2, accessFile, line = re.findall(globalLocatedAtPattern,text)[0]
-    error = "Global variable buffer overflow, '"+identifier +"' from file "+originFile+parseOverflow(text)+ "\n\tAccessed address "+locatedAt + ",\n\t" +ofSize2
+    error = "Global variable buffer overflow, '"+identifier +"' from file "+originFile+ ", accessed at"+createSecondError(accessFile,line)[1:] +parseOverflow(text)+"\tAccessed address "+locatedAt + ", " +ofSize2
     return [(accessFile,line , error, None)]
+
 
 
 def grepHeapBufferOveflow(text):
@@ -96,9 +104,10 @@ def grepHeapBufferOveflow(text):
     locatedAt, ofSize2, body, accessFile, line = re.findall(heapLocatedAtPattern, text)[0]
     allocatedAtTrace = grepTrace(body)
     error = "Heap buffer overflow"
-    error2= parseOverflow(text) + "\n\tAccessed address "+locatedAt  +ofSize2
+    error2 = createSecondError(accessFile,line)
+    error2 += parseOverflow(text) + "\tAccessed address "+locatedAt  +ofSize2
     error2 += ", allocated at:\n" + parseTrace(allocatedAtTrace)
-    return [(accessFile, line, error + error2, lambda vars: error + ", suspect variables: " + vars + error2)]
+    return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
 def grepStackBufferOverflow(text):
     stackLocatedAtPattern = re.compile(
@@ -106,18 +115,20 @@ def grepStackBufferOverflow(text):
     locatedAt, frameTraceBody, frameBody, accessFile, line = re.findall(stackLocatedAtPattern, text)[0]
     frameTrace = grepTrace(frameTraceBody)
     error = "Stack buffer overflow"
-    error2 = parseOverflow(text) + "\n\tAccessed address " + locatedAt
+    error2 = createSecondError(accessFile, line)
+    error2 += parseOverflow(text) + "\tAccessed address " + locatedAt
     error2 += ":\n" + parseTrace(frameTrace) # + "\n\t" + frameBody
-    return [(accessFile, line, error + error2, lambda vars: error + ", suspect variables: " + vars + error2)]
+    return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
 def grepHeapUseAfterFree(text):
     heapUseLocatedAtPattern = re.compile(
         r'(is located [A-Za-z0-9]+ bytes inside of [0-9a-z-]+ region)(?:(?:.|\n)*)(freed by thread [A-Z0-9]+ here:)((?:.|\n)*)(previously allocated by thread [A-Z0-9]+ here:)((?:.|\n)*)SUMMARY:(?:.|\n)*?([a-zA-Z-_ ]+.(?:cpp|c)):([0-9]+)')
     locatedAt, freedByThread, freedByThreadTrace, previouslyAllocated, previouslyAllocatedTrace, accessFile, line = re.findall(heapUseLocatedAtPattern, text)[0]
     error = "Heap use after free"
-    error2 = parseOverflow(text) + "\n\tAccessed address " + locatedAt +", "+ freedByThread
-    error2 += "\n" + parseTrace(grepTrace(freedByThreadTrace)) + "\n\t" + previouslyAllocated + "\n" + parseTrace(grepTrace(previouslyAllocatedTrace))
-    return [(accessFile, line, error + error2, lambda vars: error + ", suspect variables: " + vars + error2)]
+    error2 = createSecondError(accessFile, line)
+    error2 += parseOverflow(text) + "\tAccessed address " + locatedAt +", "+ freedByThread
+    error2 += "\n" + parseTrace(grepTrace(freedByThreadTrace)) + "\t" + "P"+previouslyAllocated[1:] + "\n" + parseTrace(grepTrace(previouslyAllocatedTrace))
+    return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
 def grepSummary(summary, trace):
     greppedSummary = re.findall(summaryFilePattern, summary)
@@ -131,8 +142,9 @@ def grepSegmentationFault(text):
     segTrace = grepTrace(text)
     accessFile, line = grepSummary(text,segTrace)
     error = "Segmentation fault"
-    error2 = " at:\n" + parseTrace(segTrace)
-    return [(accessFile, line, error + error2, lambda vars: error + ", suspect variables: " + vars + error2)]
+    error2 = createSecondError(accessFile, line)
+    error2 += " at:\n" + parseTrace(segTrace)
+    return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
 
 def grepMemoryLeaks(text, summary):
@@ -141,9 +153,10 @@ def grepMemoryLeaks(text, summary):
     for directLeak, leakBody in re.findall(memoryLeakPattern,text):
         error = "Detected memory leaks"
         leakTrace = grepTrace(leakBody)
-        error2 = "\n"+parseTrace(leakTrace)
         accessFile, line = leakTrace[0][2], leakTrace[0][3]
-        errorList.append((accessFile, line, error + error2, lambda vars: error+ ", suspect variables: " + vars + error2))
+        error2 = createSecondError(accessFile, line)
+        error2 += "\n" + parseTrace(leakTrace)
+        errorList.append((accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2)))
     #errorList.append((accessFile,1,summary, None))
     return errorList
 
@@ -153,9 +166,11 @@ def grepUninitializedMemoryUse(text, summary):
     useBody, uninitValue, allocatedBody = re.findall(uninitializedMemoryPattern,text)[0]
     error = "Use of uninitialized value"
     useTrace, allocatedTrace = grepTrace(useBody), grepTrace(allocatedBody)
-    error2 = "\n\tUsed at:\n"+parseTrace(useTrace)
-    error2 += "\n\tAllocated at:\n"+parseTrace(allocatedTrace)
+
     accessFile, line = grepSummary(summary,useTrace)
-    errorList.append((accessFile, line, error + error2, lambda vars: error+ ", suspect variables: " + vars + error2))
+    error2 = createSecondError(accessFile, line)
+    error2 += "\n\tUsed at:\n" + parseTrace(useTrace)
+    error2 += "\tAllocated at:\n" + parseTrace(allocatedTrace)
+    errorList.append((accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2)))
 
     return errorList

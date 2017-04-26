@@ -1,0 +1,17 @@
+Line:7: Pointer's 'arr' malloc is missing null pointer check.
+Line:9: Memory:[#5]: Use of uninitialized value, suspect variables: ['arr']
+        Used at:
+                Line:9 in function 'main'
+
+        Allocated at:
+                Line:7 in function 'main'
+!MemoryEnd!
+Line:14: Uninitialized identifier 'uninit' of type int.
+Line:15: Bad line indentation, expected to start with 1 tab(s).
+Line:16: Memory:[#5]: Use of uninitialized value, suspect variables: ['arr']
+        Used at:
+                Line:9 in function 'main'
+
+        Allocated at:
+                Line:7 in function 'main'!MemoryEnd!
+Line:17: Uninitialized identifier 'uninit' of type int.

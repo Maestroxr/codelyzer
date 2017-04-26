@@ -1,8 +1,7 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow.c:7: Pointer's 'array' malloc is missing null pointer check.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow.c:9: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow]: Heap buffer overflow, suspect variables: ['array']
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow.c:6: Pointer's 'array' malloc is missing null pointer check.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow.c:8: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow]: Heap buffer overflow, suspect variables: ['array'], sanitizer_address-heap_buffer_overflow.c:8
 	Was accessed by read of size 4 at:
-		sanitizer_address-heap_buffer_overflow.c:9 in function 'main'
-
+		sanitizer_address-heap_buffer_overflow.c:8 in function 'main'
 	Accessed address is located 4 bytes to the right of 400-byte region, allocated at:
-		sanitizer_address-heap_buffer_overflow.c:7 in function 'main'
-!MemoryEnd!
+		sanitizer_address-heap_buffer_overflow.c:6 in function 'main'
+:MemoryEnd:
