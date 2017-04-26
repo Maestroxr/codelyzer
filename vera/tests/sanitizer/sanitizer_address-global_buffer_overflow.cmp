@@ -1,6 +1,4 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-global_buffer_overflow.c:7: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-global_buffer_overflow]: Global variable buffer overflow, 'globalArray' from file sanitizer_address-global_buffer_overflow.c
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-global_buffer_overflow.c:7: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-global_buffer_overflow] Global variable buffer overflow, 'globalArray' from file sanitizer_address-global_buffer_overflow.c, accessed at sanitizer_address-global_buffer_overflow.c:7
 	Was accessed by read of size 4 at:
 		sanitizer_address-global_buffer_overflow.c:7 in function 'main'
-
-	Accessed address is located 4 bytes to the right of global variable 'globalArray' from 'sanitizer_address-global_buffer_overflow.c',
-	of size 400
+	Accessed address is located 4 bytes to the right of global variable 'globalArray' from 'sanitizer_address-global_buffer_overflow.c', of size 400:MemoryEnd:

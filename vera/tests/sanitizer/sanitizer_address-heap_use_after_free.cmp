@@ -1,11 +1,9 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free.c:7: Pointer's 'array' malloc is missing null pointer check.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free.c:9: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free]: Heap use after free, suspect variables: ['array']
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free.c:6: Pointer's 'array' malloc is missing null pointer check.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free.c:8: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free] Heap use after free, suspect variable: 'array', sanitizer_address-heap_use_after_free.c:8
 	Was accessed by read of size 4 at:
-		sanitizer_address-heap_use_after_free.c:9 in function 'main'
-
-	Accessed address is located 4 bytes inside of 400-byte region, freed by thread T0 here:
 		sanitizer_address-heap_use_after_free.c:8 in function 'main'
-
-	previously allocated by thread T0 here:
+	Accessed address is located 4 bytes inside of 400-byte region, freed by thread T0 here:
 		sanitizer_address-heap_use_after_free.c:7 in function 'main'
-
+	Previously allocated by thread T0 here:
+		sanitizer_address-heap_use_after_free.c:6 in function 'main'
+:MemoryEnd:

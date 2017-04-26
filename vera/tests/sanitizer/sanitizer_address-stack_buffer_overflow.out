@@ -1,4 +1,4 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_buffer_overflow.c:7: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_buffer_overflow]: Stack buffer overflow, suspect variables: ['stackArray'], sanitizer_address-stack_buffer_overflow.c:7
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_buffer_overflow.c:7: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_buffer_overflow] Stack buffer overflow, suspect variable: 'stackArray', sanitizer_address-stack_buffer_overflow.c:7
 	Was accessed by read of size 4 at:
 		sanitizer_address-stack_buffer_overflow.c:7 in function 'main'
 	Accessed address is located in stack of thread T0 at offset 692 in frame:

@@ -83,7 +83,9 @@ def parseOverflow(text):
 
 
 def createInjectVarsLambda(accessFile, line, error1, error2):
-    return lambda vars: error1 + ", suspect variables: " + vars + error2
+    # str(vars)[1:-1] to ignore brackets [] of suspect variables list
+    return lambda vars: error1 + ", suspect variables: " + str(vars) + error2 if (len(vars) > 1) else error1 + ", suspect variable: " + str(vars)[1:-1] + error2
+
 
 def createSecondError(accessFile,line):
     return ", "+accessFile+ ":" + line
