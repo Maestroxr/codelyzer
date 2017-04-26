@@ -71,7 +71,7 @@ def grepTrace(text):
 def parseTrace(trace):
     s = ""
     for number, function,file,line in trace:
-        s += '\t\t'+number + " " + file +":"+line+" in function '"+function+"'"
+        s += '\t\t'+ file +":"+line+" in function '"+function+"'\n"
     return s
 
 def parseOverflow(text):
@@ -107,7 +107,7 @@ def grepStackBufferOverflow(text):
     frameTrace = grepTrace(frameTraceBody)
     error = "Stack buffer overflow"
     error2 = parseOverflow(text) + "\n\tAccessed address " + locatedAt
-    error2 += ":\n" + parseTrace(frameTrace) + "\n\t" + frameBody
+    error2 += ":\n" + parseTrace(frameTrace) # + "\n\t" + frameBody
     return [(accessFile, line, error + error2, lambda vars: error + ", suspect variables: " + vars + error2)]
 
 def grepHeapUseAfterFree(text):
@@ -144,7 +144,7 @@ def grepMemoryLeaks(text, summary):
         error2 = "\n"+parseTrace(leakTrace)
         accessFile, line = leakTrace[0][2], leakTrace[0][3]
         errorList.append((accessFile, line, error + error2, lambda vars: error+ ", suspect variables: " + vars + error2))
-    errorList.append((accessFile,1,summary, None))
+    #errorList.append((accessFile,1,summary, None))
     return errorList
 
 def grepUninitializedMemoryUse(text, summary):

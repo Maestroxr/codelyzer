@@ -4,19 +4,11 @@
 int main(int argc, char** argv) 
 {
 	int res = -1;
-	/*
-		Memory Sanitizer
-	*/
 	int* arr = (int*)malloc(7*sizeof(int));
-	arr[ 2 ] = 0; // BOOM Uninitialized memory read   -V-
-	if (arr[ 3 ]) 
+	arr[ 2 ] = 0;  //  - OK - Write to uninitialized memory
+	if (arr[ 3 ]) // BOOM  - Read from uninitialized memory
 	{
-		printf("xx\n");
-	}
-	
-	if (!arr)
-	{
-		res = -2;
+		res = 1;
 	}
 	free(arr);
 	return res;

@@ -4,19 +4,11 @@
 int main(int argc, char** argv) 
 {
 	int res = -1;
-	
-	/*
-		Address Sanitizer
-	*/
-	
-	int* array = new int[ 100 ];
-	delete [] array;
-	if (array[ argc ])
+	int* array = (int*)malloc(100*sizeof(int));
+	free(array);
+	if (array[ argc ])// BOOM Heap-use-after-free	
 	{
-		// BOOM Heap-use-after-free		-V-
-		res = array[ argc ];  // BOOM Heap-use-after-free
+		res = 1;
 	}
-	
-	/***/
 	return res;
 }

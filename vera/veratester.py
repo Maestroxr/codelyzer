@@ -23,8 +23,8 @@ def testFiles(fileList, dir, cmdMaker,reportTime = False, files = set()):
         if errors:
             print("file:"+nameOnly+" errors:"+str(errors.decode('ascii')))
             continue
-        with open(filePath+".out",'w') as outputFile:
-            outputFile.write(output.decode('ascii'))
+        with open(filePath+".out",'wb') as outputFile:
+            outputFile.write(output)
 
         with open(filePath + ".out", 'r') as outputFile:
             if os.path.isfile(filePath+".cmp"):

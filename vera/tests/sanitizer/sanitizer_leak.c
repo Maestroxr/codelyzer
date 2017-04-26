@@ -3,22 +3,15 @@
 int main(int argc, char** argv) 
 {
 	int res = -1;
-	/*
-		Leak Sanitizer
-	*/
 	void* p = (void*)malloc(7);
 	if (!p)
 	{
-		//do something one
+		res = 1;
 	}
-	p = 0; // The memory is leaked here.	-V-
-	p = (void*)malloc(7);
+	p = (void*)malloc(7); // The memory is leaked here - no use of free()
 	if (!p)
 	{
-		//do something one
+		res = 2;
 	}
-	p = 0; // The memory is leaked here.	-V-
-	/***/
-	
-	return res;
+	return res; // The memory is leaked here - no use of free()
 }

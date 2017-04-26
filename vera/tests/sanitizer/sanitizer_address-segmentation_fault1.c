@@ -7,7 +7,7 @@ int main(void)
 { 
 	char* p; 
 
-	p[10] = 'a';
+	p[ 10 ] = 'a';
 	printf("\n %s \n", p); 
 
 	return 0; 
