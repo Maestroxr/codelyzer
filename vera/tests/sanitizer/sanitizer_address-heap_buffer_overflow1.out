@@ -1,0 +1,6 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow1.c:14: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow1] Heap buffer overflow, suspect variables: ['i', 'p'], sanitizer_address-heap_buffer_overflow1.c:14
+	Was accessed by write of size 1 at:
+		sanitizer_address-heap_buffer_overflow1.c:14 in function 'main'
+	Accessed address is located 0 bytes to the right of 3-byte region, allocated at:
+		sanitizer_address-heap_buffer_overflow1.c:6 in function 'main'
+:MemoryEnd:

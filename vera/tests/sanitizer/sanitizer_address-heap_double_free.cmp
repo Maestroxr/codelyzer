@@ -1,0 +1,8 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_double_free.c:11: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_double_free] Double free of memory, suspect variable: 'p', sanitizer_address-heap_double_free.c:11
+	Attempted double free in thread T0:
+		sanitizer_address-heap_double_free.c:11 in function 'main'
+	Freed address is located 0 bytes inside of 8-byte region, already freed by thread T0 here:
+		sanitizer_address-heap_double_free.c:10 in function 'main'
+	Previously allocated by thread T0 here:
+		sanitizer_address-heap_double_free.c:5 in function 'main'
+:MemoryEnd:

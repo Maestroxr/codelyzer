@@ -1,7 +1,6 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory.c:5: Pointer's 'arr' malloc is missing null pointer check.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory.c:7: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory] Use of uninitialized value, suspect variable: 'arr', sanitizer_memory.c:7
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory.c:11: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_memory] Use of uninitialized value, suspect variable: 'arr', sanitizer_memory.c:11
 	Used at:
-		sanitizer_memory.c:7 in function 'main'
+		sanitizer_memory.c:11 in function 'main'
 	Allocated at:
 		sanitizer_memory.c:5 in function 'main'
 :MemoryEnd:

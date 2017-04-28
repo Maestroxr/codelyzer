@@ -811,7 +811,6 @@ def sanitizerAnalysis(sanirizerDir,sanitizerFile):
     pointerLineDict = {}
     fileNameOnly = { os.path.basename(k):k for k,v in fileInfoDict.items()}
     for (file, line, error), (injectVars, appearsInFiles) in runtimeErrorList.iteritems():
-
         if file not in fileInfoDict:
             if file not in fileNameOnly:
 
