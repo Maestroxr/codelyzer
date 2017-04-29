@@ -1,14 +1,14 @@
-/* SEGMENTATION FAULT */
 #include<stdio.h> 
 #include<stdlib.h> 
 #include<string.h> 
-
-int main(void) 
+void func(char ** argv) 
 { 
-	char* p; 
-
-	p[ 10 ] = 'a';
-	printf("\n %s \n", p); 
-
+	char arr[ 2 ] = { 0 }; 
+	strcpy(arr, argv[ 1 ]); 
+	return; 
+} 
+int main(int argc, char *argv[]) 
+{ 
+	func(argv); 
 	return 0; 
 }

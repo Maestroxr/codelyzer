@@ -1,0 +1,6 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_use_after_return1.c:11: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-stack_use_after_return1] Stack memory use after function return, suspect variable: 'c', sanitizer_address-stack_use_after_return1.c:11
+	Was accessed by read of size 1 at:
+		sanitizer_address-stack_use_after_return1.c:11 in function 'main'
+	Accessed address is located in stack of thread T0 at offset 32 in frame:
+		sanitizer_address-stack_use_after_return1.c:4 in function 'func'
+:MemoryEnd:

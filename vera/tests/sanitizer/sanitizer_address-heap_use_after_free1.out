@@ -1,0 +1,8 @@
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free1.c:14: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_use_after_free1] Heap use after free, suspect variable: 'p', sanitizer_address-heap_use_after_free1.c:14
+	Was accessed by write of size 1 at:
+		sanitizer_address-heap_use_after_free1.c:14 in function 'main'
+	Accessed address is located 0 bytes inside of 3-byte region, freed by thread T0 here:
+		sanitizer_address-heap_use_after_free1.c:13 in function 'main'
+	Previously allocated by thread T0 here:
+		sanitizer_address-heap_use_after_free1.c:5 in function 'main'
+:MemoryEnd:

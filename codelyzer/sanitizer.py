@@ -198,7 +198,7 @@ def regexDoubleFree(text):
         regexTrace(doubleFreeBody), regexTrace(originalFreeBody), regexTrace(previouslyAllocatedBody)
 
     accessFile, line = doubleFreeTrace[0][2], doubleFreeTrace[0][3]
-    error = "Double free of memory"
+    error = "Double free of heap memory"
     error2 = createSecondError(accessFile, line)
     error2 += "\n\tAttempted double free " + doubleFreeInThread + "\n" + parseTrace(doubleFreeTrace)
     error2 += "\tFreed address " + locatedAt +", already " + originalFreeByThread +"\n" + parseTrace(originalFreeTrace)
@@ -209,7 +209,7 @@ def regexUseAfterReturn(text):
     stackLocatedAtPattern = re.compile(locatedAtStackPattern)
     locatedAt, frameTraceBody, frameBody, accessFile, line = re.findall(stackLocatedAtPattern, text)[0]
     frameTrace = regexTrace(frameTraceBody)
-    error = "Memory use after function return"
+    error = "Stack memory use after function return"
     error2 = createSecondError(accessFile, line)
     error2 += parseOverflow(text) + "\tAccessed address " + locatedAt +":\n"
     error2 +=  parseTrace(frameTrace)  # + "\n\t" + frameBody
