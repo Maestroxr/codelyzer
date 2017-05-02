@@ -1,4 +1,4 @@
-#!/usr/bin/python
+
 # Curly brackets from the same pair should be either in the same line or in the same column
 import re
 import vera
@@ -67,8 +67,11 @@ def acceptPairs ():
 
 def checkFragmentedIndentation(startingLine,endingLine,bracerCouples):
     """
-       This function checks for the right indentation from startingLine to
-       endingLine and between the bracer couples list recieved.
+    This function checks for the right indentation from startingLine to
+    endingLine and between the bracer couples list recieved.
+    :param startingLine: The line to start from.
+    :param endingLine: The line to end at.
+    :param bracerCouples: The list of bracer couples to check indentation in between.
     """
     if (len(bracerCouples) > 1):
         checkLineRangeIndentation(startingLine, parens[bracerCouples[0]].line)
@@ -81,9 +84,12 @@ def checkFragmentedIndentation(startingLine,endingLine,bracerCouples):
 
 def checkLineRangeIndentation (startingLine, endingLine):
     """
-        This function runs through the lines and checks for tab amount at the
-        start of each line equal to indentation global variable.
+     This function runs through the lines and checks for tab amount at the
+     start of each line equal to indentation global variable.
+    :param startingLine: The line to start at.
+    :param endingLine:  The line to end at.
     """
+
     global allLines, indentation, file, stateTokens, stateIndex, state, commentLineDic
     #print("checking line, starting:"+str(startingLine)+ " ending:" + str(endingLine)+" indentation:"+str(indentation))
 

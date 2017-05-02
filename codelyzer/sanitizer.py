@@ -16,6 +16,12 @@ fileLinePattern = r'([a-zA-Z-_ 0-9]+\.(?:cpp|c)):([0-9]+)'
 summaryFilePattern = r'SUMMARY:(?:.|\n)*?'+fileLinePattern
 locatedAtStackPattern = r'(is located in stack of thread [A-Za-z0-9]+ at offset [0-9]+ in frame)((?:.|\n)*)(This frame (?:.|\n)*)HINT:(?:.|\n)*?'+fileLinePattern
 def sanitize(sanitizerDir, sanitizerFile):
+    """
+    This function iterates sanitization log files and parses errors according to regular expressions.
+    :param sanitizerDir: The directory which holds the logs.
+    :param sanitizerFile: If specified, a single log file to parse.
+    :return: A list of the runtime errors gathered by the sanitizer.
+    """
     onlyfiles = []
     if sanitizerFile != "None":
         onlyfiles = [sanitizerDir+"\\"+sanitizerFile]
@@ -66,6 +72,11 @@ def sanitize(sanitizerDir, sanitizerFile):
     return runtimeErrorList
 
 def addRuntimeErrors(logfile, errorList):
+    """
+    This function adds a list of errors to the runtime errors list.
+    :param logfile: The log file the error was parsed from.
+    :param errorList: The error list.
+    """
     global runtimeErrorList
     for errorfile, line, error, injectVars  in errorList:
         if not runtimeErrorList.has_key((errorfile, line)):
@@ -75,6 +86,11 @@ def addRuntimeErrors(logfile, errorList):
 
 
 def regexTrace(text):
+    """
+    This function parses a stack trace from text.
+    :param text: The text which holds the trace.
+    :return: Returns a list containing the trace entries.
+    """
     traceList = []
     tracePattern = re.compile(r'(#[0-9]+)(?:.)*(?:in ([a-z0-9A-Z]+))(?:.)*?'+fileLinePattern)
     for (number, function,file,line) in re.findall(tracePattern, text):
@@ -82,12 +98,22 @@ def regexTrace(text):
     return traceList
 
 def parseTrace(trace):
+    """
+    This function parses a list containing trace entries into a trace text.
+    :param trace: The trace list.
+    :return: The parsed trace.
+    """
     s = ""
     for number, function,file,line in trace:
         s += '\t\t'+ file +":"+line+" in function '"+function+"'\n"
     return s
 
 def parseOverflow(text):
+    """
+    This function parses an overflow prefix of a sanitizer log file.
+    :param text: The text which holds the overflow data.
+    :return: A parsed overflow string.
+    """
     _, address, readWrite, ofSize1, body = re.findall(onAddressPattern, text)[0]
     atTrace = regexTrace(body)
     overflow = "\n\tWas accessed by " + ("read" if readWrite == "READ" else "write")
@@ -96,16 +122,36 @@ def parseOverflow(text):
 
 
 def createInjectVarsLambda(accessFile, line, error1, error2):
+    """
+    This function creates a lambda function which parses an error by injecting the lamda's only variable - a list of
+    suspect variables.
+    The lambda then parses the error string according to specified structure.
+    :param accessFile: The file that was accessed when the error occured.
+    :param line: The line of access.
+    :param error1: The first part of the error.
+    :param error2: The second part of the error.
+    :return: A lambda which parses the error string and recieved a list of string representing the variables.
+    """
     # str(vars)[1:-1] to ignore brackets [] of suspect variables list
     return lambda vars: error1 + ", suspect variables: " + str(vars) + error2 if (len(vars) > 1) else error1 + \
             ", suspect variable: " + str(vars)[1:-1] + error2
 
 
 def createSecondError(accessFile,line):
+    """
+    A function that parses the second error string.
+    :param accessFile: The file accessed when the occured.
+    :param line: The line of access.
+    :return: A parsed second part of an error.
+    """
     return ", "+accessFile+ ":" + line
 
 def regexGlobalBufferOveflow(text):
-
+    """
+    This function construct a global buffer overflow error.
+    :param text: The text the error should be regexed from.
+    :return: The error list parsed.
+    """
     globalLocatedAtPattern = re.compile(r'(is located [0-9]+ bytes to the right of global variable \'([0-9a-zA-Z]+)\''
                          r' from \'([a-zA-Z-_ ]+.(?:cpp|c))\') (?:\(0x[0-9a-z]+\)) (of size [0-9]+)(?:.|\n)*'+summaryFilePattern)
 
@@ -117,6 +163,11 @@ def regexGlobalBufferOveflow(text):
 
 
 def regexHeapBufferOveflow(text):
+    """
+        This function construct a heap buffer overflow error.
+        :param text: The text the error should be regexed from.
+        :return: The error list parsed.
+        """
     heapLocatedAtPattern = re.compile(r'(is located [0-9]+ bytes to the right of )((?:[0-9]+).*region)((?:.|\n)*)'+summaryFilePattern)
     locatedAt, ofSize2, body, accessFile, line = re.findall(heapLocatedAtPattern, text)[0]
     allocatedAtTrace = regexTrace(body)
@@ -127,6 +178,11 @@ def regexHeapBufferOveflow(text):
     return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
 def regexStackBufferOverflow(text):
+    """
+        This function construct a stack buffer overflow error.
+        :param text: The text the error should be regexed from.
+        :return: The error list parsed.
+        """
     stackLocatedAtPattern = re.compile(locatedAtStackPattern)
     locatedAt, frameTraceBody, frameBody, accessFile, line = re.findall(stackLocatedAtPattern, text)[0]
     frameTrace = regexTrace(frameTraceBody)
@@ -137,6 +193,11 @@ def regexStackBufferOverflow(text):
     return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
 def regexHeapUseAfterFree(text):
+    """
+        This function construct a heap use after free error.
+        :param text: The text the error should be regexed from.
+        :return: The error list parsed.
+        """
     heapUseLocatedAtPattern = re.compile(freedAllocatedPattern+summaryFilePattern)
     locatedAt, freedByThread, freedByThreadTrace, previouslyAllocated, previouslyAllocatedTrace, accessFile, line =\
         re.findall(heapUseLocatedAtPattern, text)[0]
@@ -147,6 +208,12 @@ def regexHeapUseAfterFree(text):
     return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
 def regexSummary(summary, trace):
+    """
+    This function parses a summary text.
+    :param summary: The summary text to parse.
+    :param trace: The trace that the access file and line should be regexed from, incase the summary does not have them.
+    :return: returns an accessed file and line tuple.
+    """
     regexpedSummary = re.findall(summaryFilePattern, summary)
     if regexpedSummary:
         accessFile, line = regexpedSummary[0]
@@ -155,6 +222,11 @@ def regexSummary(summary, trace):
     return accessFile, line
 
 def regexSegmentationFault(text):
+    """
+        This function construct a segmentation fault error.
+        :param text: The text the error should be regexed from.
+        :return: The error list parsed.
+        """
     segTrace = regexTrace(text)
     accessFile, line = regexSummary(text,segTrace)
     error = "Segmentation fault"
@@ -164,6 +236,12 @@ def regexSegmentationFault(text):
 
 
 def regexMemoryLeaks(text, summary):
+    """
+        This function constructs a memory leaks error.
+        :param text: The text the error should be regexed from.
+        :param summary: THe summary text parts of the error should be regexed from.
+        :return: The error list parsed.
+        """
     memoryLeakPattern = re.compile(r'(Direct leak of [0-9]+ byte\(s\) in [0-9]+ object\(s\) allocated from:)((?:.|\n)*?)\n\n')
     errorList = []
     for directLeak, leakBody in re.findall(memoryLeakPattern,text):
@@ -177,6 +255,12 @@ def regexMemoryLeaks(text, summary):
     return errorList
 
 def regexUninitializedMemoryUse(text, summary):
+    """
+    This function constructs an uninitialized memory use error.
+    :param text: The text the error should be regexed from.
+    :param summary: THe summary text parts of the error should be regexed from.
+    :return: The error list parsed.
+    """
     uninitializedMemoryPattern = re.compile(r'((?:.|\n)*?)\n\n(.*)((?:.|\n)*?)\n\n')
     useBody, uninitValue, allocatedBody = re.findall(uninitializedMemoryPattern,text)[0]
     error = "Use of uninitialized value"
@@ -190,6 +274,11 @@ def regexUninitializedMemoryUse(text, summary):
 
 
 def regexDoubleFree(text):
+    """
+        This function constructs a double free error.
+        :param text: The text the error should be regexed from.
+        :return: The error list parsed.
+        """
     doubleFreePattern = re.compile(addressPattern+r' (in thread [A-Za-z0-9]+:)((?:.|\n)*)\1 '+freedAllocatedPattern+r'SUMMARY:')
     address, doubleFreeInThread, doubleFreeBody, locatedAt, originalFreeByThread, originalFreeBody,\
         previouslyAllocated, previouslyAllocatedBody = re.findall(doubleFreePattern, text)[0]
@@ -206,6 +295,11 @@ def regexDoubleFree(text):
     return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
 def regexUseAfterReturn(text):
+    """
+        This function constructs a use after return error.
+        :param text: The text the error should be regexed from.
+        :return: The error list parsed.
+        """
     stackLocatedAtPattern = re.compile(locatedAtStackPattern)
     locatedAt, frameTraceBody, frameBody, accessFile, line = re.findall(stackLocatedAtPattern, text)[0]
     frameTrace = regexTrace(frameTraceBody)
