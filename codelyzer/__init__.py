@@ -1,3 +1,5 @@
-from .sanitizer import sanitize
-from .rule_indentation import indentationAnalysis
-from .rule_analysis import veraAnalysis, sanitizerAnalysis
+from codelyzer.sanitizer import sanitize
+from codelyzer.indentation import indentationAnalysis
+from codelyzer.analysis import veraAnalysis, sanitizerAnalysis
+from codelyzer.stack_push import pushInitializationStack
+from codelyzer.stack_pop import popInitializationStack

@@ -24,7 +24,10 @@ import os
 import re
 import operator
 import vera
-import codelyzer
+from codelyzer.stack_push import pushInitializationStack
+from codelyzer.stack_pop import popInitializationStack
+from codelyzer.functionalyze import functionalyze
+from codelyzer.sanitizer import sanitize
 
 uppercasePattern = re.compile("^[A-Z][A-Z0-9_]*[A-Z0-9]$")
 camelCasePattern = re.compile("[^$a-zA-Z0-9]")
