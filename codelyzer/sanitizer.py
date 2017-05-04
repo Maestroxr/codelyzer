@@ -192,10 +192,11 @@ def regexHeapBufferOveflow(text, summary):
     heapLocatedAtPattern = re.compile(r'(is located [0-9]+ bytes to the right of )((?:[0-9]+).*region)((?:.|\n)*)SUMMARY:')
     locatedAt, ofSize2, body = re.findall(heapLocatedAtPattern, text)[0]
     allocatedAtTrace = regexTrace(body)
-    accessFile, line = regexSummary(summary, allocatedAtTrace)
+    overflowText, overflowTrace = parseOverflow(text)
+    accessFile, line = regexSummary(summary, overflowTrace)
     error = "Heap buffer overflow"
     error2 = createSecondError(accessFile,line)
-    error2 += parseOverflow(text)[0] + "\tAccessed address "+locatedAt  +ofSize2
+    error2 += overflowText + "\tAccessed address "+locatedAt  +ofSize2
     error2 += ", allocated at:\n" + parseTrace(allocatedAtTrace)
     return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
@@ -208,10 +209,11 @@ def regexStackBufferOverflow(text, summary):
     stackLocatedAtPattern = re.compile(locatedAtStackPattern)
     locatedAt, frameTraceBody, frameBody= re.findall(stackLocatedAtPattern, text)[0]
     frameTrace = regexTrace(frameTraceBody)
-    accessFile, line = regexSummary(summary, frameTrace)
+    overflowText, overflowTrace = parseOverflow(text)
+    accessFile, line = regexSummary(summary, overflowTrace)
     error = "Stack buffer overflow"
     error2 = createSecondError(accessFile, line)
-    error2 += parseOverflow(text)[0] + "\tAccessed address " + locatedAt
+    error2 += overflowText + "\tAccessed address " + locatedAt
     error2 += ":\n" + parseTrace(frameTrace) # + "\n\t" + frameBody
     return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
@@ -223,10 +225,12 @@ def regexHeapUseAfterFree(text, summary):
         """
     heapUseLocatedAtPattern = re.compile(freedAllocatedPattern)
     locatedAt, freedByThread, freedByThreadTrace, previouslyAllocated, previouslyAllocatedTrace= re.findall(heapUseLocatedAtPattern, text)[0]
-    accessFile, line = regexSummary(summary, parseOverflow(text)[1])
+    overflowText, overflowTrace = parseOverflow(text)
+    accessFile, line = regexSummary(summary, overflowTrace)
+    accessFile, line = regexSummary(summary, overflowTrace)
     error = "Heap use after free"
     error2 = createSecondError(accessFile, line)
-    error2 += parseOverflow(text)[0] + "\tAccessed address " + locatedAt +", "+ freedByThread
+    error2 += overflowText + "\tAccessed address " + locatedAt +", "+ freedByThread
     error2 += "\n" + parseTrace(regexTrace(freedByThreadTrace)) + "\t" + "P"+previouslyAllocated[1:] + "\n" + parseTrace(regexTrace(previouslyAllocatedTrace))
     return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
@@ -313,9 +317,11 @@ def regexUseAfterReturn(text, summary):
     stackLocatedAtPattern = re.compile(locatedAtStackPattern)
     locatedAt, frameTraceBody, frameBody = re.findall(stackLocatedAtPattern, text)[0]
     frameTrace = regexTrace(frameTraceBody)
-    accessFile, line = regexSummary(summary, frameTrace)
+
+    overflowText, overflowTrace = parseOverflow(text)
+    accessFile, line = regexSummary(summary, overflowTrace)
     error = "Stack memory use after function return"
     error2 = createSecondError(accessFile, line)
-    error2 += parseOverflow(text)[0] + "\tAccessed address " + locatedAt +":\n"
+    error2 += overflowText + "\tAccessed address " + locatedAt +":\n"
     error2 +=  parseTrace(frameTrace)  # + "\n\t" + frameBody
     return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]

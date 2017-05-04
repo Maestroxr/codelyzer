@@ -3,7 +3,10 @@ C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buf
 C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:19: Pointer's 'pArr' malloc is missing null pointer check.
 C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:39: Malloc's cast is to incorrect type, pointer 'pArr' initialized as 'int**' but cast was to 'int*'.
 C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:39: Pointer's 'pArr' malloc is missing null pointer check.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:39: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2] Heap buffer overflow, suspect variables: ['i', 'pArr', 'size'], sanitizer_address-heap_buffer_overflow2.c:39
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:45: Spacing for identifier/literal in operator [], supposed to be '[ 0 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:45: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:63: Spacing for identifier/literal in operator [], supposed to be '[ 0 ]'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:67: Memory:[C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2] Heap buffer overflow, suspect variables: ['i', 'pArr'], sanitizer_address-heap_buffer_overflow2.c:67
 	Was accessed by write of size 4 at:
 		sanitizer_address-heap_buffer_overflow2.c:67 in function 'valueScan'
 		sanitizer_address-heap_buffer_overflow2.c:40 in function 'prog'
@@ -12,9 +15,6 @@ C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buf
 		sanitizer_address-heap_buffer_overflow2.c:39 in function 'prog'
 		sanitizer_address-heap_buffer_overflow2.c:20 in function 'main'
 :MemoryEnd:
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:45: Spacing for identifier/literal in operator [], supposed to be '[ 0 ]'.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:45: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
-C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:63: Spacing for identifier/literal in operator [], supposed to be '[ 0 ]'.
 C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:85: Spacing for identifier/literal in operator [], supposed to be '[ j ]'.
 C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:85: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
 C:\Work\AutoAssessment\codelyzer\vera\tests\sanitizer\sanitizer_address-heap_buffer_overflow2.c:87: Spacing for identifier/literal in operator [], supposed to be '[ i ]'.
