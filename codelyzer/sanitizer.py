@@ -6,15 +6,15 @@ runtimeErrorList = {}
 
 pattern = r'(?:==[0-9]+==.+Sanitizer: )(detected memory leaks|SEGV on unknown address|attempting double-free|'\
                      r'global-buffer-overflow|use-of-uninitialized-value|heap-use-after-free|stack-use-after-return|'\
-                     r'stack-buffer-overflow|heap-buffer-overflow)((?:[\n]|.)+)(?:(SUMMARY.*)|ABORTING)'
+                     r'stack-buffer-overflow|heap-buffer-overflow)((?:[\n]|.)+(?:(SUMMARY.*)))'
 
 addressPattern = r'(0x[0-9a-z]+)'
 onAddressPattern = r'(on address )'+addressPattern+r'(?:.|\n)*(READ|WRITE)( of size [0-9]+ at)((?:.|\n)*)\2'
 freedAllocatedPattern = r'(is located [A-Za-z0-9]+ bytes inside of [0-9a-z-]+ region)(?:(?:.|\n)*)(freed by thread' \
-                        r' [A-Z0-9]+ here:)((?:.|\n)*)(previously allocated by thread [A-Z0-9]+ here:)((?:.|\n)*)'
+                        r' [A-Z0-9]+ here:)((?:.|\n)*)(previously allocated by thread [A-Z0-9]+ here:)((?:.|\n)*)SUMMARY:'
 fileLinePattern = r'([a-zA-Z-_ 0-9]+\.(?:cpp|c)):([0-9]+)'
 summaryFilePattern = r'SUMMARY:(?:.|\n)*?'+fileLinePattern
-locatedAtStackPattern = r'(is located in stack of thread [A-Za-z0-9]+ at offset [0-9]+ in frame)((?:.|\n)*)(This frame (?:.|\n)*)HINT:(?:.|\n)*?'+fileLinePattern
+locatedAtStackPattern = r'(is located in stack of thread [A-Za-z0-9]+ at offset [0-9]+ in frame)((?:.|\n)*)(This frame (?:.|\n)*)HINT:(?:.|\n)*?'
 def sanitize(sanitizerDir, sanitizerFile):
     """
     This function iterates sanitization log files and parses errors according to regular expressions.
@@ -43,19 +43,19 @@ def sanitize(sanitizerDir, sanitizerFile):
 
             for (warning,body,summary) in re.findall(pattern,read_file):
                 if warning == "global-buffer-overflow":
-                    addRuntimeErrors(logFile,regexGlobalBufferOveflow(body))
+                    addRuntimeErrors(logFile,regexGlobalBufferOveflow(body,summary))
 
                 elif warning == "stack-buffer-overflow":
-                    addRuntimeErrors(logFile, regexStackBufferOverflow(body))
+                    addRuntimeErrors(logFile, regexStackBufferOverflow(body,summary))
 
                 elif warning == "heap-buffer-overflow":
-                    addRuntimeErrors(logFile, regexHeapBufferOveflow(body))
+                    addRuntimeErrors(logFile, regexHeapBufferOveflow(body,summary))
 
                 elif warning == "heap-use-after-free":
-                    addRuntimeErrors(logFile, regexHeapUseAfterFree(body))
+                    addRuntimeErrors(logFile, regexHeapUseAfterFree(body,summary))
 
                 elif warning == "SEGV on unknown address":
-                    addRuntimeErrors(logFile, regexSegmentationFault(body))
+                    addRuntimeErrors(logFile, regexSegmentationFault(body,summary))
 
                 elif warning == "detected memory leaks":
                     addRuntimeErrors(logFile, regexMemoryLeaks(body,summary))
@@ -64,10 +64,10 @@ def sanitize(sanitizerDir, sanitizerFile):
                     addRuntimeErrors(logFile, regexUninitializedMemoryUse(body, summary))
 
                 elif warning == "attempting double-free":
-                    addRuntimeErrors(logFile,regexDoubleFree(body))
+                    addRuntimeErrors(logFile,regexDoubleFree(body,summary))
 
                 elif warning == "stack-use-after-return":
-                    addRuntimeErrors(logFile,regexUseAfterReturn(body))
+                    addRuntimeErrors(logFile,regexUseAfterReturn(body,summary))
 
     return runtimeErrorList
 
@@ -118,7 +118,7 @@ def parseOverflow(text):
     atTrace = regexTrace(body)
     overflow = "\n\tWas accessed by " + ("read" if readWrite == "READ" else "write")
     overflow += ofSize1 + ":\n" + parseTrace(atTrace)
-    return overflow
+    return overflow, atTrace
 
 
 def createInjectVarsLambda(accessFile, line, error1, error2):
@@ -146,66 +146,6 @@ def createSecondError(accessFile,line):
     """
     return ", "+accessFile+ ":" + line
 
-def regexGlobalBufferOveflow(text):
-    """
-    This function construct a global buffer overflow error.
-    :param text: The text the error should be regexed from.
-    :return: The error list parsed.
-    """
-    globalLocatedAtPattern = re.compile(r'(is located [0-9]+ bytes to the right of global variable \'([0-9a-zA-Z]+)\''
-                         r' from \'([a-zA-Z-_ ]+.(?:cpp|c))\') (?:\(0x[0-9a-z]+\)) (of size [0-9]+)(?:.|\n)*'+summaryFilePattern)
-
-    locatedAt, identifier, originFile, ofSize2, accessFile, line = re.findall(globalLocatedAtPattern,text)[0]
-    error = "Global variable buffer overflow, '"+identifier +"' from file "+originFile+ ", accessed at"+\
-            createSecondError(accessFile,line)[1:] +parseOverflow(text)+"\tAccessed address "+locatedAt + ", " +ofSize2
-    return [(accessFile,line , error, None)]
-
-
-
-def regexHeapBufferOveflow(text):
-    """
-        This function construct a heap buffer overflow error.
-        :param text: The text the error should be regexed from.
-        :return: The error list parsed.
-        """
-    heapLocatedAtPattern = re.compile(r'(is located [0-9]+ bytes to the right of )((?:[0-9]+).*region)((?:.|\n)*)'+summaryFilePattern)
-    locatedAt, ofSize2, body, accessFile, line = re.findall(heapLocatedAtPattern, text)[0]
-    allocatedAtTrace = regexTrace(body)
-    error = "Heap buffer overflow"
-    error2 = createSecondError(accessFile,line)
-    error2 += parseOverflow(text) + "\tAccessed address "+locatedAt  +ofSize2
-    error2 += ", allocated at:\n" + parseTrace(allocatedAtTrace)
-    return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
-
-def regexStackBufferOverflow(text):
-    """
-        This function construct a stack buffer overflow error.
-        :param text: The text the error should be regexed from.
-        :return: The error list parsed.
-        """
-    stackLocatedAtPattern = re.compile(locatedAtStackPattern)
-    locatedAt, frameTraceBody, frameBody, accessFile, line = re.findall(stackLocatedAtPattern, text)[0]
-    frameTrace = regexTrace(frameTraceBody)
-    error = "Stack buffer overflow"
-    error2 = createSecondError(accessFile, line)
-    error2 += parseOverflow(text) + "\tAccessed address " + locatedAt
-    error2 += ":\n" + parseTrace(frameTrace) # + "\n\t" + frameBody
-    return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
-
-def regexHeapUseAfterFree(text):
-    """
-        This function construct a heap use after free error.
-        :param text: The text the error should be regexed from.
-        :return: The error list parsed.
-        """
-    heapUseLocatedAtPattern = re.compile(freedAllocatedPattern+summaryFilePattern)
-    locatedAt, freedByThread, freedByThreadTrace, previouslyAllocated, previouslyAllocatedTrace, accessFile, line =\
-        re.findall(heapUseLocatedAtPattern, text)[0]
-    error = "Heap use after free"
-    error2 = createSecondError(accessFile, line)
-    error2 += parseOverflow(text) + "\tAccessed address " + locatedAt +", "+ freedByThread
-    error2 += "\n" + parseTrace(regexTrace(freedByThreadTrace)) + "\t" + "P"+previouslyAllocated[1:] + "\n" + parseTrace(regexTrace(previouslyAllocatedTrace))
-    return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
 def regexSummary(summary, trace):
     """
@@ -217,18 +157,88 @@ def regexSummary(summary, trace):
     regexpedSummary = re.findall(summaryFilePattern, summary)
     if regexpedSummary:
         accessFile, line = regexpedSummary[0]
-    else:
+    elif trace is not None:
         accessFile, line = trace[0][2], trace[0][3]
+    else:
+        return "Parsing Error - no access file", 1
     return accessFile, line
 
-def regexSegmentationFault(text):
+
+
+def regexGlobalBufferOveflow(text, summary):
+    """
+    This function construct a global buffer overflow error.
+    :param text: The text the error should be regexed from.
+    :return: The error list parsed.
+    """
+    globalLocatedAtPattern = re.compile(r'(is located [0-9]+ bytes to the right of global variable \'([0-9a-zA-Z]+)\''
+                         r' from \'([a-zA-Z-_ ]+.(?:cpp|c))\') (?:\(0x[0-9a-z]+\)) (of size [0-9]+)(?:.|\n)*SUMMARY:')
+
+    locatedAt, identifier, originFile, ofSize2= re.findall(globalLocatedAtPattern,text)[0]
+    accessFile, line = regexSummary(summary, None)
+    error = "Global variable buffer overflow, '"+identifier +"' from file "+originFile+ ", accessed at"+\
+            createSecondError(accessFile,line)[1:] +parseOverflow(text)[0]+"\tAccessed address "+locatedAt + ", " +ofSize2
+    return [(accessFile,line , error, None)]
+
+
+
+def regexHeapBufferOveflow(text, summary):
+    """
+        This function construct a heap buffer overflow error.
+        :param text: The text the error should be regexed from.
+        :return: The error list parsed.
+        """
+
+    heapLocatedAtPattern = re.compile(r'(is located [0-9]+ bytes to the right of )((?:[0-9]+).*region)((?:.|\n)*)SUMMARY:')
+    locatedAt, ofSize2, body = re.findall(heapLocatedAtPattern, text)[0]
+    allocatedAtTrace = regexTrace(body)
+    accessFile, line = regexSummary(summary, allocatedAtTrace)
+    error = "Heap buffer overflow"
+    error2 = createSecondError(accessFile,line)
+    error2 += parseOverflow(text)[0] + "\tAccessed address "+locatedAt  +ofSize2
+    error2 += ", allocated at:\n" + parseTrace(allocatedAtTrace)
+    return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
+
+def regexStackBufferOverflow(text, summary):
+    """
+        This function construct a stack buffer overflow error.
+        :param text: The text the error should be regexed from.
+        :return: The error list parsed.
+        """
+    stackLocatedAtPattern = re.compile(locatedAtStackPattern)
+    locatedAt, frameTraceBody, frameBody= re.findall(stackLocatedAtPattern, text)[0]
+    frameTrace = regexTrace(frameTraceBody)
+    accessFile, line = regexSummary(summary, frameTrace)
+    error = "Stack buffer overflow"
+    error2 = createSecondError(accessFile, line)
+    error2 += parseOverflow(text)[0] + "\tAccessed address " + locatedAt
+    error2 += ":\n" + parseTrace(frameTrace) # + "\n\t" + frameBody
+    return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
+
+def regexHeapUseAfterFree(text, summary):
+    """
+        This function construct a heap use after free error.
+        :param text: The text the error should be regexed from.
+        :return: The error list parsed.
+        """
+    heapUseLocatedAtPattern = re.compile(freedAllocatedPattern)
+    locatedAt, freedByThread, freedByThreadTrace, previouslyAllocated, previouslyAllocatedTrace= re.findall(heapUseLocatedAtPattern, text)[0]
+    accessFile, line = regexSummary(summary, parseOverflow(text)[1])
+    error = "Heap use after free"
+    error2 = createSecondError(accessFile, line)
+    error2 += parseOverflow(text)[0] + "\tAccessed address " + locatedAt +", "+ freedByThread
+    error2 += "\n" + parseTrace(regexTrace(freedByThreadTrace)) + "\t" + "P"+previouslyAllocated[1:] + "\n" + parseTrace(regexTrace(previouslyAllocatedTrace))
+    return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
+
+
+def regexSegmentationFault(text, summary):
     """
         This function construct a segmentation fault error.
         :param text: The text the error should be regexed from.
         :return: The error list parsed.
         """
     segTrace = regexTrace(text)
-    accessFile, line = regexSummary(text,segTrace)
+    accessFile, line = regexSummary(summary,segTrace)
     error = "Segmentation fault"
     error2 = createSecondError(accessFile, line)
     error2 += " at:\n" + parseTrace(segTrace)
@@ -273,20 +283,20 @@ def regexUninitializedMemoryUse(text, summary):
     return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
 
-def regexDoubleFree(text):
+def regexDoubleFree(text, summary):
     """
         This function constructs a double free error.
         :param text: The text the error should be regexed from.
         :return: The error list parsed.
         """
-    doubleFreePattern = re.compile(addressPattern+r' (in thread [A-Za-z0-9]+:)((?:.|\n)*)\1 '+freedAllocatedPattern+r'SUMMARY:')
+    doubleFreePattern = re.compile(addressPattern+r' (in thread [A-Za-z0-9]+:)((?:.|\n)*)\1 '+freedAllocatedPattern)
     address, doubleFreeInThread, doubleFreeBody, locatedAt, originalFreeByThread, originalFreeBody,\
         previouslyAllocated, previouslyAllocatedBody = re.findall(doubleFreePattern, text)[0]
 
     doubleFreeTrace, originalFreeTrace, previouslyAllocatedTrace = \
         regexTrace(doubleFreeBody), regexTrace(originalFreeBody), regexTrace(previouslyAllocatedBody)
 
-    accessFile, line = doubleFreeTrace[0][2], doubleFreeTrace[0][3]
+    accessFile, line = regexSummary(summary, doubleFreeTrace)
     error = "Double free of heap memory"
     error2 = createSecondError(accessFile, line)
     error2 += "\n\tAttempted double free " + doubleFreeInThread + "\n" + parseTrace(doubleFreeTrace)
@@ -294,17 +304,18 @@ def regexDoubleFree(text):
     error2 += "\t" + "P" + previouslyAllocated[1:] + "\n" + parseTrace(previouslyAllocatedTrace)
     return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
 
-def regexUseAfterReturn(text):
+def regexUseAfterReturn(text, summary):
     """
         This function constructs a use after return error.
         :param text: The text the error should be regexed from.
         :return: The error list parsed.
         """
     stackLocatedAtPattern = re.compile(locatedAtStackPattern)
-    locatedAt, frameTraceBody, frameBody, accessFile, line = re.findall(stackLocatedAtPattern, text)[0]
+    locatedAt, frameTraceBody, frameBody = re.findall(stackLocatedAtPattern, text)[0]
     frameTrace = regexTrace(frameTraceBody)
+    accessFile, line = regexSummary(summary, frameTrace)
     error = "Stack memory use after function return"
     error2 = createSecondError(accessFile, line)
-    error2 += parseOverflow(text) + "\tAccessed address " + locatedAt +":\n"
+    error2 += parseOverflow(text)[0] + "\tAccessed address " + locatedAt +":\n"
     error2 +=  parseTrace(frameTrace)  # + "\n\t" + frameBody
     return [(accessFile, line, error + error2, createInjectVarsLambda(accessFile, line, error, error2))]
