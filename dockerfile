@@ -9,7 +9,7 @@ LABEL org.inginious.grading.name="intro"
 RUN     yum -y update
 RUN 	yum -y install gcc-c++
 RUN 	yum -y install python-pip
-RUN		pip install --upgrade pip
+#RUN		pip install --upgrade pip
 
 # Install git
 RUN		yum -y install git
