@@ -1,5 +1,5 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:36: Pointer's 'problem1' malloc is missing null pointer check.
-C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:42: Pointer's 'problem2' malloc is missing null pointer check.
-C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:47: Pointer's 'problem3' malloc is missing null pointer check.
-C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:53: Pointer's 'problem5' malloc is missing null pointer check.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:36: Pointer's 'problem1' malloc is missing null pointer check.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:42: Pointer's 'problem2' malloc is missing null pointer check.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:47: Pointer's 'problem3' malloc is missing null pointer check.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:53: Pointer's 'problem5' malloc is missing null pointer check.
 C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:53: Pointer's 'problem4' malloc is missing null pointer check.

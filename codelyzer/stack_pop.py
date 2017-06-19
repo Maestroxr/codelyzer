@@ -131,7 +131,6 @@ def popRecursive(token, fileName, stack, state, flags, infoDict, assignOpPresent
             type = state["type"][:]
             if "stars" in state and state["stars"]:
                 type += state["stars"][-1]
-
         elif identifier.value in typeDict:
             type = typeDict[identifier.value][:]
         identifierType = ''.join([t.value for t in type])
@@ -169,6 +168,7 @@ def popIdentifier(identifier, fileName, stack, flags, state, infoDict, assignOpP
     elif identifier.value != state["identifier"].value:
         return
     varDict[identifier.value] = identifier
+
     type = state["type"][:]
     if "const" in state:
         type = [state["const"]] + type
@@ -238,8 +238,8 @@ def popStar(token, fileName, flags, state): #Justin Bieber
 
     index, typeLength = len(starList), len(state["type"]) -1
     identifier = state["identifier"]
-    startTypeList = type[:typeLength + index+1]
-    endTypeList = type[typeLength + index+1:]
+    startTypeList = [tt.value for tt in type[:typeLength + index+1]]
+    endTypeList = [tt.value for tt in type[typeLength + index+1:]]
     nextToken = starList[-1] if starList else state["type"][-1]
 
     if "commas" in state:
@@ -247,11 +247,11 @@ def popStar(token, fileName, flags, state): #Justin Bieber
         identifier = state["vars"][-1]
         if not starList:
             nextToken = comma
-        startTypeList = state["type"] + [whitespace,comma] + starList
-        endTypeList = flags["stars"][index:]
+        startTypeList = [tt.value for tt in state["type"]] + [" ",comma.value] + [tt.value for tt in starList]
+        endTypeList = [tt.value for tt in flags["stars"][index:]]
 
-    startType = ''.join([tt.value for tt in startTypeList])
-    endType = ''.join([tt.value for tt in endTypeList])
+    startType = ''.join(startTypeList)
+    endType = ''.join(endTypeList)
     differenceToNextInType = star.column - nextToken.column - len(nextToken.value)
     differenceToVar = identifier.column - star.column - 1
     starCloseToIdentifier = index != len(flags["stars"]) - 1 or differenceToVar == 1
@@ -280,8 +280,6 @@ def popInitializationStack(fileName, stackList):
     :param fileName: The file name.
     :param stackList: The stack list.
     """
-    global whitespace
-    whitespace = vera.getTokens(vera.getSourceFileNames()[0], 1, 0, -1, -1, ["space"])[0]
     varDict, typeDict, mallocDict, constDict, defineDict, funcDict = {}, {}, {}, {}, {}, {}
     defineStacks = {}
     flags, errors = {}, []

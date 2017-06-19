@@ -149,5 +149,6 @@ def indentationAnalysis():
         if (index != end):
             vera.report(file,parens[index].line, "Excessive closing bracket?")
         indentation = -1
-        checkFragmentedIndentation(1,len(allLines)-1,topLevelBracers)
+        if topLevelBracers:
+            checkFragmentedIndentation(1,len(allLines)-1,topLevelBracers)
 

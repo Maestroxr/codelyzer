@@ -1,1 +1,1 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\MainBeforeStruct.c:19: Main function appears before struct defintion. struct is at line 19 , main appeared at line 11.
+C:\Work\AutoAssessment\codelyzer\vera\tests\MainBeforeStruct.c:19: Main function appears before struct defintion. struct is at line 19 , main appeared at line 11.

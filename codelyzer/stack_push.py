@@ -6,7 +6,7 @@ import vera
 literals = {"intlit", "stringlit", "charlit"}
 
 types = {"int", "char", "void", "float", "double"}
-
+customTypes = { "size_t" }
 operators = { "plus", "plusplus","notequal", "minus", "minusminus", "less", "greater", "greaterequal"}
 assignOperators = { "assign" , "percentassign", "minusassign", "plusassign", "andassign", "divideassign",
                     "orassign", "starassign", "shiftleftassign", "shiftrightassign", "xorassign" }
@@ -32,7 +32,7 @@ def pushFirstToken(stack, globalState, state, t):
         stack.append(t)
 
     elif t.type == "identifier":
-        if t.value in types:
+        if t.value in customTypes:
             state["type"] = [t]
 
         else:
@@ -103,7 +103,7 @@ def pushContinueToken(stack, state, t, functionOrControl, assignOpPresent):
 
         elif "identifier" not in state:
             if "const" in state and maybeTypeToken:
-                state["type"] = t
+                state["type"] = [t]
 
             else:
                 state["identifier"] = t
@@ -112,7 +112,7 @@ def pushContinueToken(stack, state, t, functionOrControl, assignOpPresent):
             state["type"] = [state["identifier"]]
             state["identifier"] = t
 
-    elif t.type == "star" and "type" in state and not functionOrControl:
+    elif t.type == "star" and ("type" in state or maybeTypeToken) and not functionOrControl:
         commas, vars = len(state["commas"]) if "commas" in state else 0, len(state["vars"]) if "vars" in state else 0
         if (commas >= 1 and commas == vars + 1) or (commas == 0 and "identifier" not in state):
             state.setdefault("stars",[[]])

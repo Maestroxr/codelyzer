@@ -1,1 +1,1 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\GlobalVariableAfterFirstFunction.c:11: Global variable 'problem' appears after the first function main.
+C:\Work\AutoAssessment\codelyzer\vera\tests\GlobalVariableAfterFirstFunction.c:11: Global variable 'problem' appears after the first function main.

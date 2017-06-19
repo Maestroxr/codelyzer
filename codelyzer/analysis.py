@@ -41,8 +41,6 @@ def veraAnalysis():
     concluding with two more convention checks.
     """
     sourceFiles = vera.getSourceFileNames()
-    global whitespace
-    whitespace = vera.getTokens(sourceFiles[0],1,0,-1,-1,["space"])[0]
 
     for fileName in sourceFiles:
         stackStateList = pushInitializationStack(fileName)
@@ -120,7 +118,7 @@ def checkUppercaseUnderscore(file, dic,errorPrefix):
     for k, v in dic.iteritems():
         result = re.search(uppercasePattern,k)
         if result == None:
-            vera.report(file,v.line,errorPrefix+" '("+k+"' : "+v.value+")' name isn't UPPERCASE_WITH_UNDERSCORE.")
+            vera.report(file,v.line,errorPrefix+" "+k+" name isn't UPPERCASE_WITH_UNDERSCORE.")
 
 
 def checkCamelCase(fileName,dic):

@@ -1,4 +1,4 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:14: Pointer's '*' does not have a single whitespace before identifier, 'int* problem1' instead of 'int*  problem1'.
-C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:15: Pointer's '*' does not have a single whitespace before identifier, 'int ,* problem2' instead of 'int ,*problem2'.
-C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:16: Pointer's '*' does not have a single whitespace before identifier, 'int ,***** problem4' instead of 'int ,*****            problem4'.
-C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:16: Pointer's '*' does not have a single whitespace before identifier, 'int** problem3' instead of 'int**     problem3'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:14: Pointer's '*' does not have a single whitespace before identifier, 'int* problem1' instead of 'int*  problem1'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:15: Pointer's '*' does not have a single whitespace before identifier, 'int ,* problem2' instead of 'int ,*problem2'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:16: Pointer's '*' does not have a single whitespace before identifier, 'int ,***** problem4' instead of 'int ,*****            problem4'.
+C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:16: Pointer's '*' does not have a single whitespace before identifier, 'int** problem3' instead of 'int**     problem3'.

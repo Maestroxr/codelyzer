@@ -1,2 +1,2 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\EqualityCheckingLhsVarRhsConstOrDefine.c:34: Equality checking 'problem1 == CONSTANT_INT' with left-hand side argument as variable and right-hand side as const or #define.
-C:\Work\AutoAssessment\codelyzer\vera\tests\EqualityCheckingLhsVarRhsConstOrDefine.c:39: Equality checking 'problem2 == CONSTANT_DEFINE' with left-hand side argument as variable and right-hand side as const or #define.
+C:\Work\AutoAssessment\codelyzer\vera\tests\EqualityCheckingLhsVarRhsConstOrDefine.c:34: Equality checking 'problem1 == CONSTANT_INT' with left-hand side argument as variable and right-hand side as const or #define.
+C:\Work\AutoAssessment\codelyzer\vera\tests\EqualityCheckingLhsVarRhsConstOrDefine.c:39: Equality checking 'problem2 == CONSTANT_DEFINE' with left-hand side argument as variable and right-hand side as const or #define.

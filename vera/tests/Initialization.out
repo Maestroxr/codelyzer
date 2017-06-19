@@ -1,8 +1,8 @@
-C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:11: Uninitialized identifier 'problem1' of type int.
-C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:12: Uninitialized identifier 'problem3' of type int.
-C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:12: Uninitialized identifier 'problem2' of type int.
-C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:13: Uninitialized identifier 'problem4' of type int*.
-C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:14: Uninitialized identifier 'problem5' of type int.
-C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:15: Uninitialized identifier 'problem7' of type char.
-C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:15: Uninitialized identifier 'problem6' of type char**.
-C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:16: Uninitialized identifier 'problem8' of type char.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:11: Uninitialized identifier 'problem1' of type int.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:12: Uninitialized identifier 'problem3' of type int.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:12: Uninitialized identifier 'problem2' of type int.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:13: Uninitialized identifier 'problem4' of type int*.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:14: Uninitialized identifier 'problem5' of type int.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:15: Uninitialized identifier 'problem7' of type char.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:15: Uninitialized identifier 'problem6' of type char**.
+C:\Work\AutoAssessment\codelyzer\vera\tests\Initialization.c:16: Uninitialized identifier 'problem8' of type char.
