@@ -7,7 +7,6 @@ LABEL org.inginious.grading.name="intro"
 
 # Update yum, install pip, update pip
 RUN     yum -y update
-RUN	localedef -i en_US -f UTF-8 en_US.UTF-8
 RUN 	yum -y install gcc-c++
 RUN 	yum -y install python-pip
 #RUN		pip install --upgrade pip
