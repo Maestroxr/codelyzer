@@ -1,2 +1,14 @@
+NEXT> value:x line:11 column:21
+NEXT> value:CONSTANT_INT line:11 column:5
+NEXT> value:x line:16 column:24
+NEXT> value:CONSTANT_DEFINE line:16 column:5
+NEXT> value:CONSTANT_INT line:21 column:24
+NEXT> value:CONSTANT_DEFINE line:21 column:5
+NEXT> value:CONSTANT_DEFINE line:26 column:21
+NEXT> value:CONSTANT_INT line:26 column:5
+NEXT> value:CONSTANT_INT line:34 column:17
+NEXT> value:problem1 line:34 column:5
+NEXT> value:CONSTANT_DEFINE line:39 column:17
+NEXT> value:problem2 line:39 column:5
 C:\Work\AutoAssessment\codelyzer\vera\tests\EqualityCheckingLhsVarRhsConstOrDefine.c:34: Equality checking 'problem1 == CONSTANT_INT' with left-hand side argument as variable and right-hand side as const or #define.
 C:\Work\AutoAssessment\codelyzer\vera\tests\EqualityCheckingLhsVarRhsConstOrDefine.c:39: Equality checking 'problem2 == CONSTANT_DEFINE' with left-hand side argument as variable and right-hand side as const or #define.

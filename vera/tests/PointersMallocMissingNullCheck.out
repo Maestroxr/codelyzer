@@ -1,3 +1,63 @@
+NEXT RECURSIVE> value:) line:7 column:34
+NEXT> value:int line:7 column:31
+NEXT> value:* line:7 column:15
+NEXT> value:int line:7 column:12
+NEXT> value:p1 line:8 column:6
+NEXT> value:! line:8 column:5
+NEXT RECURSIVE> value:) line:12 column:67
+NEXT> value:int line:12 column:64
+NEXT> value:* line:12 column:48
+NEXT> value:int line:12 column:45
+NEXT RECURSIVE> value:) line:12 column:34
+NEXT> value:int line:12 column:31
+NEXT> value:* line:12 column:15
+NEXT> value:int line:12 column:12
+NEXT> value:NULL line:13 column:11
+NEXT> value:!= line:13 column:8
+NEXT> value:p2 line:13 column:5
+NEXT RECURSIVE> value:) line:17 column:29
+NEXT> value:int line:17 column:26
+NEXT> value:* line:17 column:10
+NEXT> value:int line:17 column:7
+NEXT> value:p2 line:18 column:13
+NEXT> value:!= line:18 column:10
+NEXT> value:NULL line:18 column:5
+NEXT RECURSIVE> value:) line:22 column:29
+NEXT> value:int line:22 column:26
+NEXT> value:* line:22 column:10
+NEXT> value:int line:22 column:7
+NEXT> value:NULL line:24 column:11
+NEXT> value:p3 line:24 column:5
+NEXT> value:p1 line:28 column:13
+NEXT> value:NULL line:28 column:5
+NEXT RECURSIVE> value:) line:36 column:40
+NEXT> value:int line:36 column:37
+NEXT> value:* line:36 column:21
+NEXT> value:int line:36 column:18
+NEXT> value:problem2 line:38 column:6
+NEXT> value:! line:38 column:5
+NEXT RECURSIVE> value:) line:42 column:35
+NEXT> value:int line:42 column:32
+NEXT> value:* line:42 column:16
+NEXT> value:int line:42 column:13
+NEXT RECURSIVE> value:) line:46 column:40
+NEXT> value:int line:46 column:37
+NEXT> value:* line:46 column:21
+NEXT> value:int line:46 column:18
+NEXT RECURSIVE> value:) line:47 column:35
+NEXT> value:int line:47 column:32
+NEXT> value:* line:47 column:16
+NEXT> value:int line:47 column:13
+NEXT> value:NULL line:48 column:17
+NEXT> value:problem3 line:48 column:5
+NEXT RECURSIVE> value:) line:53 column:79
+NEXT> value:int line:53 column:76
+NEXT> value:* line:53 column:60
+NEXT> value:int line:53 column:57
+NEXT RECURSIVE> value:) line:53 column:40
+NEXT> value:int line:53 column:37
+NEXT> value:* line:53 column:21
+NEXT> value:int line:53 column:18
 C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:36: Pointer's 'problem1' malloc is missing null pointer check.
 C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:42: Pointer's 'problem2' malloc is missing null pointer check.
 C:\Work\AutoAssessment\codelyzer\vera\tests\PointersMallocMissingNullCheck.c:47: Pointer's 'problem3' malloc is missing null pointer check.

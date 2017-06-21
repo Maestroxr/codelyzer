@@ -1,3 +1,51 @@
+NEXT RECURSIVE> value:) line:9 column:34
+NEXT> value:int line:9 column:31
+NEXT> value:* line:9 column:15
+NEXT> value:int line:9 column:12
+NEXT RECURSIVE> value:) line:10 column:77
+NEXT> value:int line:10 column:74
+NEXT> value:* line:10 column:58
+NEXT> value:* line:10 column:57
+NEXT> value:* line:10 column:56
+NEXT> value:* line:10 column:55
+NEXT> value:* line:10 column:54
+NEXT> value:int line:10 column:51
+NEXT RECURSIVE> value:) line:10 column:36
+NEXT> value:int line:10 column:33
+NEXT> value:* line:10 column:17
+NEXT> value:* line:10 column:16
+NEXT> value:int line:10 column:13
+NEXT RECURSIVE> value:) line:16 column:104
+NEXT> value:int line:16 column:101
+NEXT> value:* line:16 column:85
+NEXT> value:* line:16 column:84
+NEXT> value:* line:16 column:83
+NEXT> value:* line:16 column:82
+NEXT> value:* line:16 column:81
+NEXT> value:int line:16 column:78
+NEXT RECURSIVE> value:) line:16 column:46
+NEXT> value:int line:16 column:43
+NEXT> value:* line:16 column:27
+NEXT> value:* line:16 column:26
+NEXT> value:int line:16 column:23
+NEXT> value:problem4 line:21 column:81
+NEXT> value:! line:21 column:80
+NEXT> value:problem3 line:21 column:68
+NEXT> value:! line:21 column:67
+NEXT> value:problem2 line:21 column:55
+NEXT> value:! line:21 column:54
+NEXT> value:problem1 line:21 column:42
+NEXT> value:! line:21 column:41
+NEXT> value:pp2 line:21 column:34
+NEXT> value:! line:21 column:33
+NEXT> value:p4 line:21 column:27
+NEXT> value:! line:21 column:26
+NEXT> value:p3 line:21 column:20
+NEXT> value:! line:21 column:19
+NEXT> value:p2 line:21 column:13
+NEXT> value:! line:21 column:12
+NEXT> value:p1 line:21 column:6
+NEXT> value:! line:21 column:5
 C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:14: Pointer's '*' does not have a single whitespace before identifier, 'int* problem1' instead of 'int*  problem1'.
 C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:15: Pointer's '*' does not have a single whitespace before identifier, 'int ,* problem2' instead of 'int ,*problem2'.
 C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNot1WhitespaceFromIdentifier.c:16: Pointer's '*' does not have a single whitespace before identifier, 'int ,***** problem4' instead of 'int ,*****            problem4'.

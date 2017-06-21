@@ -1,3 +1,15 @@
+NEXT> value:10 line:9 column:7
+NEXT> value:> line:9 column:6
+NEXT> value:i line:9 column:5
+NEXT> value:100 line:17 column:10
+NEXT> value:< line:17 column:9
+NEXT> value:i line:17 column:8
+NEXT> value:10 line:24 column:7
+NEXT> value:> line:24 column:6
+NEXT> value:i line:24 column:5
+NEXT> value:100 line:26 column:10
+NEXT> value:< line:26 column:9
+NEXT> value:i line:26 column:8
 C:\Work\AutoAssessment\codelyzer\vera\tests\FullBlockExpectedInControl.c:24: Full block {} expected in the control structure.
 C:\Work\AutoAssessment\codelyzer\vera\tests\FullBlockExpectedInControl.c:25: Full block {} expected in the control structure.
 C:\Work\AutoAssessment\codelyzer\vera\tests\FullBlockExpectedInControl.c:26: Full block {} expected in the control structure.

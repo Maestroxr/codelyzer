@@ -36,7 +36,6 @@ def sanitize(sanitizerDir, sanitizerFile):
         except:
             print("Directory " + sanitizerDir + " doesn't exist.")
             return runtimeErrorList
-
     for logFile in onlyfiles:
         with open(logFile, 'r') as fin:
             read_file = fin.read()
@@ -79,10 +78,10 @@ def addRuntimeErrors(logfile, errorList):
     """
     global runtimeErrorList
     for errorfile, line, error, injectVars  in errorList:
-        if not runtimeErrorList.has_key((errorfile, line)):
+        if not runtimeErrorList.has_key((errorfile, line,error)):
             runtimeErrorList[(errorfile, line,error)] = (injectVars, {logfile})
         else:
-            runtimeErrorList[(errorfile, line)][2].add(logfile)
+            runtimeErrorList[(errorfile, line, error)][1].add(logfile)
 
 
 def regexTrace(text):

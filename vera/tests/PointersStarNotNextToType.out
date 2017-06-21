@@ -1,3 +1,60 @@
+NEXT RECURSIVE> value:) line:9 column:34
+NEXT> value:int line:9 column:31
+NEXT> value:* line:9 column:15
+NEXT> value:int line:9 column:12
+NEXT RECURSIVE> value:) line:10 column:77
+NEXT> value:int line:10 column:74
+NEXT> value:* line:10 column:58
+NEXT> value:* line:10 column:57
+NEXT> value:* line:10 column:56
+NEXT> value:* line:10 column:55
+NEXT> value:* line:10 column:54
+NEXT> value:int line:10 column:51
+NEXT RECURSIVE> value:) line:10 column:36
+NEXT> value:int line:10 column:33
+NEXT> value:* line:10 column:17
+NEXT> value:* line:10 column:16
+NEXT> value:int line:10 column:13
+NEXT RECURSIVE> value:) line:16 column:35
+NEXT> value:int line:16 column:32
+NEXT> value:* line:16 column:16
+NEXT> value:int line:16 column:13
+NEXT RECURSIVE> value:) line:17 column:103
+NEXT> value:int line:17 column:100
+NEXT> value:* line:17 column:84
+NEXT> value:* line:17 column:83
+NEXT> value:* line:17 column:82
+NEXT> value:* line:17 column:81
+NEXT> value:* line:17 column:80
+NEXT> value:* line:17 column:79
+NEXT> value:int line:17 column:76
+NEXT RECURSIVE> value:) line:17 column:44
+NEXT> value:int line:17 column:41
+NEXT> value:* line:17 column:25
+NEXT> value:* line:17 column:24
+NEXT> value:int line:17 column:21
+NEXT> value:problem5 line:21 column:101
+NEXT> value:! line:21 column:100
+NEXT> value:problem4 line:21 column:88
+NEXT> value:! line:21 column:87
+NEXT> value:problem3 line:21 column:75
+NEXT> value:! line:21 column:74
+NEXT> value:problem2 line:21 column:62
+NEXT> value:! line:21 column:61
+NEXT> value:problem1 line:21 column:49
+NEXT> value:! line:21 column:48
+NEXT> value:pp2 line:21 column:41
+NEXT> value:! line:21 column:40
+NEXT> value:p5 line:21 column:34
+NEXT> value:! line:21 column:33
+NEXT> value:p4 line:21 column:27
+NEXT> value:! line:21 column:26
+NEXT> value:p3 line:21 column:20
+NEXT> value:! line:21 column:19
+NEXT> value:p2 line:21 column:13
+NEXT> value:! line:21 column:12
+NEXT> value:p1 line:21 column:6
+NEXT> value:! line:21 column:5
 C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:15: Pointer's '*' not next to the pointer's type 'int* problem1' instead of 'int * problem1'.
 C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:16: Pointer's '*' not next to the pointer's type 'int ,* problem2' instead of 'int , * problem2'.
 C:\Work\AutoAssessment\codelyzer\vera\tests\PointersStarNotNextToType.c:17: Pointer's '*' not next to the pointer's type 'int ,****** problem4' instead of 'int ,*****     * problem4'.

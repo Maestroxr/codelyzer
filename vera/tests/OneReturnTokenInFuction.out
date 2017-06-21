@@ -1,3 +1,9 @@
+NEXT> value:10 line:20 column:8
+NEXT> value:> line:20 column:7
+NEXT> value:12 line:20 column:5
+NEXT> value:10 line:34 column:9
+NEXT> value:> line:34 column:7
+NEXT> value:x line:34 column:5
 C:\Work\AutoAssessment\codelyzer\vera\tests\OneReturnTokenInFuction.c:24: Only one 'return' token should be used in a function. Found another in line:22
 C:\Work\AutoAssessment\codelyzer\vera\tests\OneReturnTokenInFuction.c:36: Only one 'return' token should be used in a function. Found another in line:32
 C:\Work\AutoAssessment\codelyzer\vera\tests\OneReturnTokenInFuction.c:40: Only one 'return' token should be used in a function. Found another in line:36
